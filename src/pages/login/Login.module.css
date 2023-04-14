@@ -13,7 +13,7 @@
     width: 78vw;
     display: flex;
     flex-direction: row;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--secondary-color);
     place-self: center;
 }
 
@@ -33,15 +33,60 @@
     flex-direction: column;
 }
 
-.buttonSubmit {
-    background-color: rgb(255, 143, 98);
-    border-radius: 6px;
+/* .buttonSubmit {
+    background-color: var(--primary-color);
     color: white;
     border: none;
     max-width: 400px;
     height: 90px;
     font-size: 17px;
+} */
+
+.buttonSubmit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  height: 90px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, var(--secondary-color) 50%, var(--primary-color) 50%);
+  background-position: -100% 0;
+  background-size: 200% 100%;
+  transition: background-position 1s, color 1s;
 }
+
+.buttonSubmit:hover {
+  background-position: 100% 0;
+  color: var(--primary-color);
+  animation-name: color-change;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes color-change {
+  from { color: var(--primary-color); }
+  to { color: var(--secondary-color); }
+}
+
+.buttonSubmit::after{
+    color: white;
+}
+
+.buttonSubmit:disabled{
+    background-color: var(--secondary-color);
+    background-image: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+.buttonSubmit:disabled:hover{
+    animation-name: none;
+}
+  
 
 .loginInput {
     padding-left: 15px;
