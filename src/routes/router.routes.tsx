@@ -17,6 +17,11 @@ export default function Router() {
           }
         />
         <Route path='/login' element={<Login />} />
+        {/* <Route path="/quarto/:id" component={
+          <Autenticar>
+          <Quarto />
+          </ Autenticar>
+          } /> */}
       </Routes>
     </BrowserRouter>
   );

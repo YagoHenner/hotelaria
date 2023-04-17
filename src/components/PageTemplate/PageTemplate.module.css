@@ -1,0 +1,18 @@
+.page {
+    background-color: var(--secondary-color);
+    width: 100vw;
+    padding-bottom: 56px;
+}
+
+.bar {
+    background-color: white;
+    width: 100%;
+    padding-left: 160px;
+    height: 113px;
+    display: flex;
+}
+
+.children {
+    padding-left: 160px;
+    margin-top: 56px;
+}

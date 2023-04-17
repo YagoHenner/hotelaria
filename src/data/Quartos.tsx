@@ -1,0 +1,98 @@
+export const Quartos = [
+  {
+    id: 0,
+    nome: "Quarto 1",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 1,
+    nome: "Quarto 2",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 2,
+    nome: "Quarto 3",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 3,
+    nome: "Quarto 4",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 4,
+    nome: "Quarto 5",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 5,
+    nome: "Quarto 6",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 6,
+    nome: "Quarto 7",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 7,
+    nome: "Quarto 8",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 8,
+    nome: "Quarto 9",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 9,
+    nome: "Quarto 10",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 10,
+    nome: "Quarto 11",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 11,
+    nome: "Quarto 12",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 12,
+    nome: "Quarto 13",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 13,
+    nome: "Quarto 14",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 14,
+    nome: "Quarto 15",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+  {
+    id: 15,
+    nome: "Quarto 16",
+    pic: "",
+    local: "Aracaju/SE",
+  },
+];
