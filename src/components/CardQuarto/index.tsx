@@ -7,7 +7,7 @@ export default function CardQuarto({
   location,
 }: {
   title: string;
-  pic: string;
+  pic: any;
   location: string;
 }) {
   return (

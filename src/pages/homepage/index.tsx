@@ -17,7 +17,7 @@ export default function HomePage() {
                 <Link key={quarto.id} to='/' className={styles.link}>
                   <CardQuarto
                     title={quarto.nome}
-                    pic={""}
+                    pic={quarto.pic}
                     location={quarto.local}
                   />{" "}
                 </Link>

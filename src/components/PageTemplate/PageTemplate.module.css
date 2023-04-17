@@ -12,6 +12,12 @@
     display: flex;
 }
 
+.title {
+    font-size: 40px;
+    display: flex;
+    place-items: center;
+}
+
 .children {
     padding-left: 160px;
     margin-top: 56px;

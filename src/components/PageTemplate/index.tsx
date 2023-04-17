@@ -9,11 +9,11 @@ export default function PageTemplate({
   children: JSX.Element;
 }) {
   return (
-    <div style={{ height: "100%", width: "100%" }}>
+    <div>
       <MenuLateral />
       <div className={styles.page}>
         <div className={styles.bar}>
-          <h1>{title}</h1>
+          <div className={styles.title}>{title}</div>
         </div>
         <div className={styles.children}>{children}</div>
       </div>

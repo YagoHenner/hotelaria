@@ -15,10 +15,19 @@
 
 .link, .logOut{
     /* position: relative; */
+    text-decoration: none;
     align-items: center;
     margin-left: 10px;
     margin-top: 30px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    border: none;
 }
+
+.link:hover, .logOut:hover {
+    opacity: 0.6;
+}
+
 
 .span {
     position: absolute;

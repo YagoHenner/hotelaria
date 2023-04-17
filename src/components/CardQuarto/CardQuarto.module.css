@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     min-width: 300px;
-    height: 260px;
+    min-height: 300px;
     margin: 0;
     border: solid 1px rgb(0, 0, 0, 0.2);
     border-radius: 20px;
     box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
     width: 300px;
+    background-color: white;
   }
   
   .sectionTitle {
@@ -16,8 +17,20 @@
   }
 
   .pic {
-    height: 136px;
-    width: 300px;
+    max-height: 176px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .pic img {
+    flex-shrink: 0;
+    min-height: 100%;
+    min-width: 100%;
   }
 
   .section {
