@@ -59,9 +59,6 @@ export default function Login() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     //validar pelo back
-    // if (rememberMe) {
-    //   localStorage.setItem("username", username);
-    //   localStorage.setItem("password", password);
     // }
     navigate("/");
   };
@@ -116,6 +113,7 @@ export default function Login() {
               type='button'
               disabled={!isFormValid}
               className={styles.buttonSubmit}
+              onClick={handleSubmit}
             >
               Acessar plataforma
             </button>
