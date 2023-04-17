@@ -1,3 +1,10 @@
-export default function HomePage(){
-    return <div>Front-End-Start by Yago Henner</div>
+import CardQuarto from "../../components/CardQuarto";
+import MenuLateral from "../../components/MenuLateral";
+
+export default function HomePage() {
+  return (
+    <div>
+      <MenuLateral />
+    </div>
+  );
 }

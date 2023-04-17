@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    height: 260px;
+    padding: 20px;
+    margin: 30px 60px;
+    border: solid 1px rgb(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
+    justify-content: space-between;
+    width: 300px;
+  }
+  
+  .sectionTitle {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .pic {
+    height: 136px;
+    width: 300px;
+  }
+
+  .section {
+    height: 124px;
+  }
+  
+  .sectionDescription {
+    margin-top: 15px;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #585858;
+    font-weight: 400;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    max-height: 200px !important;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .buttonCancel {
+    background-color: #F44336 !important;
+    transition: all ease 0.5s !important;
+    box-sizing: border-box !important;
+  }
+  

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ContextoState from "../context/contexto";
 import { ContextoType } from "../types";
 
-function Provider({ children }: { children: JSX.Element }) {
+export default function Provider({ children }: { children: JSX.Element }) {
   const [lembrar, setLembrar] = useState(
     localStorage.getItem("lembrar") === "true"
   );
@@ -31,5 +31,3 @@ function Provider({ children }: { children: JSX.Element }) {
     </ContextoState.Provider>
   );
 }
-
-export default Provider;
