@@ -1,41 +1,44 @@
 import styles from "./Login.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ContextoState from "../../context/contexto";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  // const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (rememberMe) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-    } else {
-      localStorage.removeItem("username");
-      localStorage.removeItem("password");
-    }
-  }, [rememberMe, username, password]);
+  // useEffect(() => {
+  //   if (rememberMe) {
+  //     localStorage.setItem("username", username);
+  //     localStorage.setItem("password", password);
+  //   } else {
+  //     localStorage.removeItem("username");
+  //     localStorage.removeItem("password");
+  //   }
+  // }, [rememberMe, username, password]);
 
-  useEffect(() => {
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
-    if (storedUsername && storedPassword) {
-      setUsername(storedUsername);
-      setPassword(storedPassword);
-      setRememberMe(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedUsername = localStorage.getItem("username");
+  //   const storedPassword = localStorage.getItem("password");
+  //   if (storedUsername && storedPassword) {
+  //     setUsername(storedUsername);
+  //     setPassword(storedPassword);
+  //     setRememberMe(true);
+  //   }
+  // }, []);
 
-  const handleRememberMeChange = (event: any) => {
-    const checked = event.target.checked;
-    setRememberMe(checked);
-    localStorage.setItem("rememberMe", checked);
-    if (!checked) {
-      localStorage.removeItem("username");
-      localStorage.removeItem("password");
-    }
-  };
+  // const handleRememberMeChange = (event: any) => {
+  //   const checked = event.target.checked;
+  //   setRememberMe(checked);
+  //   localStorage.setItem("rememberMe", checked);
+  //   if (!checked) {
+  //     localStorage.removeItem("username");
+  //     localStorage.removeItem("password");
+  //   }
+  // };
 
   const handleUsernameChange = (event: any) => {
     setUsername(event.target.value);
@@ -56,11 +59,20 @@ export default function Login() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     //validar pelo back
-    if (rememberMe) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-    }
+    // if (rememberMe) {
+    //   localStorage.setItem("username", username);
+    //   localStorage.setItem("password", password);
+    // }
+    navigate("/");
   };
+
+  const { lembrar, ativarLembrar } = useContext(ContextoState);
+
+  // const handleCheckBoxChange = () => {
+  //   setLembrar(!lembrar);
+  //   localStorage.setItem("lembrar", !lembrar);
+  //   console.log(localStorage.getItem("lembrar"));
+  // };
 
   return (
     <div className={styles.main}>
@@ -93,9 +105,8 @@ export default function Login() {
               <div>
                 <input
                   type='checkbox'
-                  disabled={!isFormValid}
-                  checked={rememberMe}
-                  onChange={handleRememberMeChange}
+                  checked={lembrar}
+                  onChange={ativarLembrar}
                 />
                 <label> Lembrar-me</label>
               </div>
