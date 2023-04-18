@@ -3,7 +3,6 @@ import styles from "./Quarto.module.css";
 import PageTemplate from "../../../components/PageTemplate";
 import { Quarto } from "../../../types";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 export default function QuartoPage() {
   const location = useLocation();
@@ -13,8 +12,19 @@ export default function QuartoPage() {
     <div>
       <MenuLateral />
       <PageTemplate title={"Detalhes do Quarto"}>
-        <img width={750} src={quartoData.pic}></img>
-        <div>Quarto: {quartoData?.id}</div>
+        <div className={styles.fotoDiv}>
+          <img src={quartoData.pic}></img>
+        </div>
+        <div className='flex-row'>
+          <div className={styles.section}>
+            <div className={styles.sectionTitle}>
+              Quarto {`${quartoData.numero}`}
+            </div>
+            <div className={styles.sectionDescription}>
+              {quartoData.idTipoQuarto.descricao}
+            </div>
+          </div>
+        </div>
       </PageTemplate>
     </div>
   );

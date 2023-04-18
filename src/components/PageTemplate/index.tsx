@@ -25,12 +25,12 @@ export default function PageTemplate({
   };
 
   const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 0.5,
+    damping: 20,
+    ease: [0.6, -0.05, 0.01, 0.99],
+    duration: 1,
   };
   return (
-    <div>
+    <div className='fullScreen'>
       <MenuLateral />
       <div className={styles.page}>
         <div className={styles.bar}>

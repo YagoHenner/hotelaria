@@ -9,7 +9,7 @@ export default function HomeHospede() {
   return (
     <div>
       <MenuLateral />
-      <PageTemplate title={"Quartos"}>
+      <PageTemplate title={"Quartos Disponíveis"}>
         <div className={styles.divCards}>
           {Quartos &&
             Quartos.map((quarto) => {
@@ -21,10 +21,10 @@ export default function HomeHospede() {
                   className={styles.link}
                 >
                   <CardQuarto
-                    title={quarto.nome}
+                    title={`Quarto ${quarto.numero}`}
                     pic={quarto.pic}
-                    location={quarto.local}
-                  />{" "}
+                    location={quarto.idTipoQuarto.descricao}
+                  />
                 </Link>
               );
             })}
