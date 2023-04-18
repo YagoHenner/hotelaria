@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeUsuario from "../pages/hospede/homehospede";
 import Login from "../pages/login";
-import Autenticar from "./Autenticação/autenticar";
-import CasoLogin from "./Autenticação/casoLogin";
+import AuthUsuario from "./Autenticação/authUsuario";
+import AuthFuncionario from "./Autenticação/authFuncionario";
+import HomeFuncionario from "../pages/funcionario/homefuncionario";
 
 export default function Router() {
   return (
@@ -11,17 +12,25 @@ export default function Router() {
         <Route
           path='/'
           element={
-            <Autenticar>
+            <AuthUsuario>
               <HomeUsuario />
-            </Autenticar>
+            </AuthUsuario>
           }
         />
         <Route path='/login' element={<Login />} />
         {/* <Route path="/quarto/:id" component={
-          <Autenticar>
+          <AuthUsuario>
           <Quarto />
-          </ Autenticar>
+          </ AuthUsuario>
           } /> */}
+        <Route
+          path='/funcionario'
+          element={
+            <AuthFuncionario>
+              <HomeFuncionario />
+            </AuthFuncionario>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

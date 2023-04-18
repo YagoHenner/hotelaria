@@ -31,23 +31,18 @@ export default function Login() {
     // usando caso teste
     const res = determinarUsuario(email, password);
     if (res) {
-      if (res.tipo === 0) {
-        navigate("/");
-      } else {
+      ativarTipo(res.tipo);
+      if (res.tipo == 0) {
         navigate("/funcionario");
+      } else {
+        navigate("/");
       }
     } else {
       alert("Dados errados");
     }
   }
 
-  const { lembrar, ativarLembrar } = useContext(ContextoState);
-
-  // const handleCheckBoxChange = () => {
-  //   setLembrar(!lembrar);
-  //   localStorage.setItem("lembrar", !lembrar);
-  //   console.log(localStorage.getItem("lembrar"));
-  // };
+  const { tipo, ativarTipo } = useContext(ContextoState);
 
   return (
     <div className={styles.main}>
@@ -81,11 +76,7 @@ export default function Login() {
               style={{ justifyContent: "space-between" }}
             >
               <div>
-                <input
-                  type='checkbox'
-                  checked={lembrar}
-                  onChange={ativarLembrar}
-                />
+                <input type='checkbox' />
                 <label> Lembrar-me</label>
               </div>
               <a>Esqueci a minha senha</a>

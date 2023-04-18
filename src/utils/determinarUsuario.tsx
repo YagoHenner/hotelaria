@@ -4,7 +4,7 @@ import { User } from "../types";
 
 export default function determinarUsuario(email: string, senha: string) {
   let user = null;
-  let tipo = null;
+  let tipo = 29348;
 
   Funcionarios.forEach((item: User) => {
     if (item.email === email && item.senha === senha) {

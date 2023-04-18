@@ -8,10 +8,13 @@ import {
 } from "@phosphor-icons/react";
 import styles from "./MenuLateral.module.css";
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import ContextoState from "../../context/contexto";
 
 export default function MenuLateral() {
   const router = useLocation();
   const page = router.pathname;
+  const { logOut } = useContext(ContextoState);
   const styleIcones = (link: string) => {
     if (page === link) {
       return { color: "white", weight: "regular" };
@@ -53,7 +56,11 @@ export default function MenuLateral() {
             />
             <span className={styles.span}>Span</span>
           </Link>
-          <Link to='/' className={styles.logOut}>
+          <Link
+            onClick={() => logOut()}
+            className={styles.logOut}
+            to={"/login"}
+          >
             <SignOut
               color='white'
               size={32}

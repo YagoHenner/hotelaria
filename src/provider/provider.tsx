@@ -3,30 +3,32 @@ import ContextoState from "../context/contexto";
 import { ContextoType } from "../types";
 
 export default function Provider({ children }: { children: JSX.Element }) {
-  const [lembrar, setLembrar] = useState(
-    localStorage.getItem("lembrar") === "true"
-  );
+  const [tipo, setTipo] = useState(Number(localStorage.getItem("tipo")));
 
   // useEffect(() => {
-  //   const savedValue = JSON.parse(localStorage.getItem("lembrar") as string);
+  //   const savedValue = JSON.parse(localStorage.getItem("tipo") as string);
   //   if (savedValue !== null) {
-  //     setLembrar(savedValue);
+  //     setTipo(savedValue);
   //   }
   // }, []);
 
   // useEffect(() => {
-  //   localStorage.setItem("lembrar", JSON.stringify(lembrar));
-  // }, [lembrar]);
+  //   localStorage.setItem("tipo", JSON.stringify(tipo));
+  // }, [tipo]);
 
-  const ativarLembrar = () => {
-    console.log(lembrar);
+  const ativarTipo = (value: number) => {
+    setTipo(value);
+    console.log(tipo);
+    localStorage.setItem("tipo", String(value));
+  };
 
-    setLembrar(!lembrar);
-    localStorage.setItem("lembrar", String(!lembrar));
+  const logOut = () => {
+    setTipo(9458934);
+    localStorage.setItem("tipo", String(9458934));
   };
 
   return (
-    <ContextoState.Provider value={{ lembrar, ativarLembrar }}>
+    <ContextoState.Provider value={{ tipo, ativarTipo, logOut }}>
       {children}
     </ContextoState.Provider>
   );

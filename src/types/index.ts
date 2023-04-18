@@ -1,6 +1,7 @@
 export type ContextoType = {
-    lembrar: boolean;
-    ativarLembrar: () => void;
+    tipo: number;
+    ativarTipo: (value: number) => void;
+    logOut: () => void;
 }
 
 export type User =   {
