@@ -5,7 +5,7 @@ import { Quartos } from "../../../data/Quartos";
 import styles from "./HomeUsuario.module.css";
 import PageTemplate from "../../../components/PageTemplate";
 
-export default function HomeUsuario() {
+export default function HomeHospede() {
   return (
     <div>
       <MenuLateral />
@@ -14,7 +14,12 @@ export default function HomeUsuario() {
           {Quartos &&
             Quartos.map((quarto) => {
               return (
-                <Link key={quarto.id} to='/' className={styles.link}>
+                <Link
+                  key={quarto.id}
+                  to={`/quarto/${quarto.id}`}
+                  state={quarto}
+                  className={styles.link}
+                >
                   <CardQuarto
                     title={quarto.nome}
                     pic={quarto.pic}

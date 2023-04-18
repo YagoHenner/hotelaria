@@ -22,3 +22,25 @@
     padding-left: 160px;
     margin-top: 56px;
 }
+
+.children-enter {
+    opacity: 0;
+    transform: translateX(100%);
+    }
+    
+    .children-enter-active {
+      opacity: 1;
+      transform: translateX(0%);
+      transition: opacity 1000ms, transform 1000ms;
+    }
+    
+    .children-exit {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    
+    .children-exit-active {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 1000ms, transform 1000ms;
+    }

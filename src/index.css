@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-height: 100vh;
   overflow-x: hidden;
+  zoom: 1;
 }
 
 .flex-column {
