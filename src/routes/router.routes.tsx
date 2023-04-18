@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "../pages/homepage";
+import HomeUsuario from "../pages/hospede/homehospede";
 import Login from "../pages/login";
 import Autenticar from "./Autenticação/autenticar";
 import CasoLogin from "./Autenticação/casoLogin";
@@ -12,7 +12,7 @@ export default function Router() {
           path='/'
           element={
             <Autenticar>
-              <HomePage />
+              <HomeUsuario />
             </Autenticar>
           }
         />
