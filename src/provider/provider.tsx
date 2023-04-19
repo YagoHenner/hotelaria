@@ -2,23 +2,14 @@ import React, { useState, useEffect } from "react";
 import ContextoState from "../context/contexto";
 import { ContextoType } from "../types";
 
-export default function Provider({ children }: { children: JSX.Element }) {
+interface ProviderProps {
+  children: JSX.Element;
+}
+
+export default function Provider({ children }: ProviderProps) {
   const [tipo, setTipo] = useState(Number(localStorage.getItem("tipo")));
-
-  // useEffect(() => {
-  //   const savedValue = JSON.parse(localStorage.getItem("tipo") as string);
-  //   if (savedValue !== null) {
-  //     setTipo(savedValue);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("tipo", JSON.stringify(tipo));
-  // }, [tipo]);
-
   const ativarTipo = (value: number) => {
     setTipo(value);
-    console.log(tipo);
     localStorage.setItem("tipo", String(value));
   };
 

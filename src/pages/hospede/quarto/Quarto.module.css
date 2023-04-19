@@ -133,6 +133,11 @@
   padding: 10px 20px;
   margin-bottom: 20px;
   font-size: 17px;
+  text-decoration: none;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
   height: 90px;
   width: 70%;
@@ -142,6 +147,7 @@
   }
 
   .buttonReserva:hover{
+    color: white;
     filter: brightness(110%);
     transition: all 0.25s ease;
   }

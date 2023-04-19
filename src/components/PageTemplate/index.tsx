@@ -2,13 +2,11 @@ import MenuLateral from "../MenuLateral";
 import styles from "./PageTemplate.module.css";
 import { motion } from "framer-motion";
 
-export default function PageTemplate({
-  title,
-  children,
-}: {
+interface PageTemplateProps {
   title?: string;
   children: JSX.Element | JSX.Element[];
-}) {
+}
+export default function PageTemplate({ title, children }: PageTemplateProps) {
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -44,9 +42,7 @@ export default function PageTemplate({
           transition={pageTransition}
           className={styles.children}
         >
-          {/* <div className={styles.children}> */}
           {children}
-          {/* </div> */}
         </motion.div>
       </div>
     </div>

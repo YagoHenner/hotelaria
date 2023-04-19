@@ -1,8 +1,8 @@
 import {
+  Bell,
   Chat,
   House,
   IconWeight,
-  MapPin,
   SignOut,
   SquaresFour,
 } from "@phosphor-icons/react";
@@ -41,8 +41,8 @@ export default function MenuLateral() {
           <div className={styles.abas}>
             <div className='flex-column'>
               <Link to='/funcionario/adicionar' className={styles.link}>
-                <MapPin color='white' size={32} weight='light' />
-                <span className={styles.span}>Span</span>
+                <Bell color='white' size={32} weight='light' />
+                <span className={styles.span}>Notificações</span>
               </Link>
               <Link to='/funcionario' className={styles.link}>
                 <SquaresFour
@@ -94,8 +94,8 @@ export default function MenuLateral() {
           <div className={styles.abas}>
             <div className='flex-column'>
               <Link to='/' className={styles.link}>
-                <MapPin color='white' size={32} weight='light' />
-                <span className={styles.span}>Span</span>
+                <Bell color='white' size={32} weight='light' />
+                <span className={styles.span}>Notificações</span>
               </Link>
               <Link to='/' className={styles.link}>
                 <SquaresFour

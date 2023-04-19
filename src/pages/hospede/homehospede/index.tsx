@@ -43,10 +43,10 @@ export default function HomeHospede() {
           Até:{" "}
           <input
             type='date'
-            value={endDate?.toISOString().slice(0, 10)}
-            onChange={(event: any) =>
-              setStartDate(new Date(event.target.value))
-            }
+            value={endDate.toISOString().slice(0, 10)}
+            onChange={(event: any) => {
+              setEndDate(new Date(event.target.value));
+            }}
           ></input>
           Tipo:{" "}
           <select
@@ -71,7 +71,11 @@ export default function HomeHospede() {
                 <Link
                   key={quarto.id}
                   to={`/quarto/${quarto.id}`}
-                  state={quarto}
+                  state={{
+                    quarto: quarto,
+                    startDate: startDate,
+                    endDate: endDate,
+                  }}
                   className={styles.link}
                 >
                   <CardQuarto

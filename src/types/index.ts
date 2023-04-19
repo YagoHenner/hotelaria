@@ -5,10 +5,10 @@ export type ContextoType = {
 }
 
 export type User = {
-    id: number,
+    //o cpf é a foreign key de User
+    cpf: string,
     nome: string,
     email: string,
-    cpf: string,
     telefone: string,
     //a senha é criptografada no banco. como estamos falando de demonstração,
     //usamos uma senha teste
@@ -18,9 +18,7 @@ export type User = {
 export type Quarto = {
     id: number,
     status: number,
-    nome: string,
     pic: any,
-    local: string,
     numero: number,
     idTipoQuarto: TipoQuarto,
 }

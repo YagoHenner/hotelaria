@@ -1,15 +1,13 @@
 import style from "./CardQuarto.module.css";
 import React from "react";
 
-export default function CardQuarto({
-  title,
-  pic,
-  location,
-}: {
+interface CardQuartoProps {
   title: string;
   pic: any;
   location: string;
-}) {
+}
+
+export default function CardQuarto({ title, pic, location }: CardQuartoProps) {
   return (
     <div className={style.container}>
       <div className={style.pic}>

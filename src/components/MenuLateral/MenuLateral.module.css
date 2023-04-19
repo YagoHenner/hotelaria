@@ -33,8 +33,9 @@
 .span {
     position: absolute;
     margin: 10px;
-    margin-left: 20px;
+    margin-left: 18px;
     color: white;
+    font-size: 14px;
 }
 
 

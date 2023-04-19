@@ -2,15 +2,13 @@ import MenuLateral from "../../../components/MenuLateral";
 import styles from "./Quarto.module.css";
 import PageTemplate from "../../../components/PageTemplate";
 import { Quarto } from "../../../types";
-import { useLocation } from "react-router-dom";
-
-const barChildren = () => {
-  return <button>bunda</button>;
-};
+import { Link, useLocation } from "react-router-dom";
 
 export default function QuartoPage() {
   const location = useLocation();
-  const quartoData = location.state as Quarto;
+  const quartoData = location.state.quarto as Quarto;
+  const startDate = location.state.startDate as Date;
+  const endDate = location.state.endDate as Date;
 
   return (
     <div>
@@ -52,16 +50,32 @@ export default function QuartoPage() {
                 <div className={styles.reservaDescription}>
                   <div className={styles.dataEscolhida}>
                     <span>Data escolhida:</span>
-                    03/08 até 10/08
+                    {`${startDate?.getDate()}/${startDate
+                      .getMonth()
+                      .toString()
+                      .padStart(2, "0")} `}
+                    até{" "}
+                    {`${endDate?.getDate()}/${endDate
+                      .getMonth()
+                      .toString()
+                      .padStart(2, "0")}`}
                   </div>
                   <div className={styles.qtdDiaria}>
                     <span>Diária:</span>
                     R${quartoData.idTipoQuarto.diaria}
                   </div>
                 </div>
-                <button className={styles.buttonReserva}>
+                <Link
+                  to={`/quarto/${quartoData.id}/solicitar-reserva`}
+                  className={styles.buttonReserva}
+                  state={{
+                    quarto: quartoData,
+                    startDate: startDate,
+                    endDate: endDate,
+                  }}
+                >
                   Solicitar Reserva
-                </button>
+                </Link>
               </div>
             </div>
           </div>
