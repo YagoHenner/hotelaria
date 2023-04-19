@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    min-width: 30%;
   }
 
   .sectionTitle {
@@ -39,4 +40,108 @@
     -webkit-line-clamp: 12;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .dadosQuarto {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .cardDadosQuarto {
+    align-items: center;
+    min-width: 175px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border: solid 1px rgb(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
+    background-color: white;
+  }
+
+  .cardDadosReserva {
+    align-items: center;
+    min-width: 400px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border: solid 1px rgb(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
+    background-color: white;
+  }
+
+  .tituloDado {
+    border-bottom: 1px solid #D5D5D5;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #585858;
+    font-size: 13px;
+  }
+
+  .reservaDescription {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .qtdDado {
+    width: 100%;
+    height: 100%;
+    font-size: 120px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qtdDiaria {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .dataEscolhida {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .qtdDiaria span, .dataEscolhida span {
+    color: #585858;
+    font-size: 13px;
+    justify-content: flex-end;
+  }
+
+  .buttonReserva {
+    background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  height: 90px;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  }
+
+  .buttonReserva:hover{
+    filter: brightness(110%);
+    transition: all 0.25s ease;
   }

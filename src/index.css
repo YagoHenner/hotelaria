@@ -38,11 +38,12 @@ body {
 }
 
 .fullScreen {
-  height: 100vw;
+  min-height: 100vh;
   min-width: 100vw;
 }
 
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
