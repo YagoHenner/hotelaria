@@ -8,7 +8,6 @@ import PageTemplate from "../../../components/PageTemplate";
 export default function HomeFuncionario() {
   return (
     <div>
-      <MenuLateral />
       <PageTemplate title={"Funcionario"}>
         <div className={styles.divCards}>
           {/* {Quartos &&

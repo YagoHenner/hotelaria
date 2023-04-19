@@ -8,7 +8,6 @@ import PageTemplate from "../../../components/PageTemplate";
 export default function HomeHospede() {
   return (
     <div>
-      <MenuLateral />
       <PageTemplate title={"Quartos Disponíveis"}>
         <div className={styles.divCards}>
           {Quartos &&

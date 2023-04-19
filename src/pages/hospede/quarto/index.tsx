@@ -10,7 +10,6 @@ export default function QuartoPage() {
 
   return (
     <div>
-      <MenuLateral />
       <PageTemplate title={"Detalhes do Quarto"}>
         <div className={styles.fotoDiv}>
           <img src={quartoData.pic}></img>
