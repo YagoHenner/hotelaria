@@ -1,6 +1,6 @@
 import "./App.css";
 import Router from "./globals/routes/router.routes";
-import ContextoState from "./api/context/contexto";
+import { ContextoState, contexto } from "./api/context/contexto";
 import Provider from "./api/provider/provider";
 // import { QueryClient, QueryClientProvider } from 'react-query';
 // const queryClient = new QueryClient();

@@ -1,7 +1,7 @@
 import styles from "./Login.module.css";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ContextoState from "../../../api/context/contexto";
+import { ContextoState, contexto } from "../../../api/context/contexto";
 import determinarUsuario from "../../utils/determinarUsuario";
 
 export default function Login() {
@@ -26,21 +26,14 @@ export default function Login() {
     );
   };
 
-  function handleSubmit(email: string, password: string) {
+  const handleSubmit = (email: string, password: string) => {
     //validar pelo back
     // usando caso teste
     signIn(email, password);
     console.log(tipo);
-    // if (tipo === 0) {
-    //   navigate("/funcionario");
-    // } else if (tipo === 1) {
-    //   navigate("/hospede");
-    // } else {
-    //   alert(tipo);
-    // }
-  }
+  };
 
-  const { tipo, signIn } = useContext(ContextoState);
+  const { tipo, signIn } = contexto();
 
   return (
     <div className={styles.main}>

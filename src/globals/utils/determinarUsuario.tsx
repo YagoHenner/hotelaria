@@ -22,5 +22,5 @@ export default function determinarUsuario(email: string, senha: string) {
     });
   }
 
-  return user ? { tipo: tipo, user: user } : null;
+  return { tipo: tipo, user: user };
 }

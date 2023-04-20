@@ -9,7 +9,7 @@ const Rotas = () => {
     <AnimatePresence mode='wait'>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/hospede/*' element={<RotasHospede />} />
+        <Route path='/*' element={<RotasHospede />} />
         <Route path='/funcionario/*' element={<RotasFuncionario />} />
       </Routes>
     </AnimatePresence>

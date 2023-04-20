@@ -9,12 +9,12 @@ import {
 import styles from "./MenuLateral.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
-import ContextoState from "../../../api/context/contexto";
+import { ContextoState, contexto } from "../../../api/context/contexto";
 
 export default function MenuLateral() {
   const router = useLocation();
   const page = router.pathname;
-  const { tipo, logOut } = useContext(ContextoState);
+  const { tipo, logOut } = contexto();
   const styleIcones = (link: string) => {
     if (page === link) {
       return { color: "white", weight: "regular" };
@@ -72,9 +72,7 @@ export default function MenuLateral() {
                 <SignOut
                   color='white'
                   size={32}
-                  weight={
-                    styleIcones("/hospede").weight as IconWeight | undefined
-                  }
+                  weight={styleIcones("").weight as IconWeight | undefined}
                 />
                 <span className={styles.span}>Sair</span>
               </Link>
@@ -84,40 +82,34 @@ export default function MenuLateral() {
       ) : tipo === 1 ? (
         <>
           <header className={styles.header}>
-            <Link to='/hospede' className={styles.link}>
+            <Link to='' className={styles.link}>
               <House
-                color={styleIcones("/hospede").color}
+                color={styleIcones("").color}
                 size={32}
-                weight={
-                  styleIcones("/hospede").weight as IconWeight | undefined
-                }
+                weight={styleIcones("").weight as IconWeight | undefined}
               />
               <span className={styles.span}>Home</span>
             </Link>
           </header>
           <div className={styles.abas}>
             <div className='flex-column'>
-              <Link to='/hospede' className={styles.link}>
+              <Link to='' className={styles.link}>
                 <Bell color='white' size={32} weight='light' />
                 <span className={styles.span}>Notificações</span>
               </Link>
-              <Link to='/hospede' className={styles.link}>
+              <Link to='' className={styles.link}>
                 <SquaresFour
-                  color={styleIcones("/hospede").color}
+                  color={styleIcones("").color}
                   size={32}
-                  weight={
-                    styleIcones("/hospede").weight as IconWeight | undefined
-                  }
+                  weight={styleIcones("").weight as IconWeight | undefined}
                 />
                 <span className={styles.span}>Span</span>
               </Link>
-              <Link to='/hospede' className={styles.link}>
+              <Link to='' className={styles.link}>
                 <Chat
-                  color={styleIcones("/hospede").color}
+                  color={styleIcones("").color}
                   size={32}
-                  weight={
-                    styleIcones("/hospede").weight as IconWeight | undefined
-                  }
+                  weight={styleIcones("").weight as IconWeight | undefined}
                 />
                 <span className={styles.span}>Span</span>
               </Link>
@@ -129,9 +121,7 @@ export default function MenuLateral() {
                 <SignOut
                   color='white'
                   size={32}
-                  weight={
-                    styleIcones("/hospede").weight as IconWeight | undefined
-                  }
+                  weight={styleIcones("").weight as IconWeight | undefined}
                 />
                 <span className={styles.span}>Sair</span>
               </Link>
