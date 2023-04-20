@@ -9,6 +9,7 @@ import { ContextoState, contexto } from "../../../api/context/contexto";
 export default function SolicitarReserva() {
   const location = useLocation();
   const quartoData = location.state.quarto as Quarto;
+  const { user } = contexto();
 
   return (
     <div>
@@ -19,6 +20,7 @@ export default function SolicitarReserva() {
             <span>Quarto {quartoData.numero}</span>
             <span>{quartoData.idTipoQuarto.nome}</span>
             <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
+            <span>Quem está solicitando: {user?.nome}</span>
           </div>
         </div>
       </PageTemplate>

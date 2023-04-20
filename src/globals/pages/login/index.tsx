@@ -8,6 +8,8 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const { tipo, signIn } = contexto();
+
   const navigate = useNavigate();
 
   const handleUsernameChange = (event: any) => {
@@ -16,6 +18,14 @@ export default function Login() {
       password.length >= 10 && event.target.value !== "" && /\W/.test(password)
     );
   };
+
+  useEffect(() => {
+    if (tipo === 0) {
+      navigate("/funcionario")
+    } else if (tipo === 1) {
+      navigate("/")
+    }
+  }, [tipo])
 
   const handlePasswordChange = (event: any) => {
     setPassword(event.target.value);
@@ -33,7 +43,6 @@ export default function Login() {
     console.log(tipo);
   };
 
-  const { tipo, signIn } = contexto();
 
   return (
     <div className={styles.main}>
@@ -42,7 +51,6 @@ export default function Login() {
         <div className={styles.divFormulario}>
           <form
             className={styles.formulario}
-            onSubmit={() => handleSubmit(username, password)}
           >
             <h1>Fazer Login</h1>
             <div className='flex-column'>

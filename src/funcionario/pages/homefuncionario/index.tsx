@@ -13,19 +13,6 @@ export default function HomeFuncionario() {
     <div>
       <PageTemplate title={"Funcionario"}>
         <div className={styles.divCards}>
-          <button onClick={() => console.log(tipo)}>sidfjsidfj</button>
-          {/* {Quartos &&
-            Quartos.map((quarto) => {
-              return (
-                <Link key={quarto.id} to='/' className={styles.link}>
-                  <CardQuarto
-                    title={quarto.nome}
-                    pic={quarto.pic}
-                    location={quarto.local}
-                  />{" "}
-                </Link>
-              );
-            })} */}
         </div>
       </PageTemplate>
     </div>
