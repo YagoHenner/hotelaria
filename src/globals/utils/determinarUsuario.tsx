@@ -96,3 +96,23 @@ const App = () => {
 };
 Dessa forma, você pode armazenar o estado da comida em um contexto com o valor padrão do localStorage e permitir que outros componentes acessem e atualizem esse estado.*/
 }
+
+{
+  /*type Comida = {
+  nome: string;
+  id: number;
+};
+
+const [comida, setComida] = useState<Comida | null>(() => {
+  const comidaString = localStorage.getItem("comida");
+  return comidaString ? JSON.parse(comidaString) : null;
+});
+
+const handleButtonClick = (nome: string) => {
+  const comidaEncontrada = comidas.find((comida) => comida.nome === nome);
+  if (comidaEncontrada) {
+    localStorage.setItem("comida", JSON.stringify(comidaEncontrada));
+    setComida(comidaEncontrada);
+  }
+};*/
+}
