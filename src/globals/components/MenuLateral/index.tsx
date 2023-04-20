@@ -82,7 +82,7 @@ export default function MenuLateral() {
       ) : tipo === 1 ? (
         <>
           <header className={styles.header}>
-            <Link to='' className={styles.link}>
+            <Link to='/' className={styles.link}>
               <House
                 color={styleIcones("").color}
                 size={32}
@@ -93,11 +93,11 @@ export default function MenuLateral() {
           </header>
           <div className={styles.abas}>
             <div className='flex-column'>
-              <Link to='' className={styles.link}>
+              <Link to='/' className={styles.link}>
                 <Bell color='white' size={32} weight='light' />
                 <span className={styles.span}>Notificações</span>
               </Link>
-              <Link to='' className={styles.link}>
+              <Link to='/' className={styles.link}>
                 <SquaresFour
                   color={styleIcones("").color}
                   size={32}
@@ -105,7 +105,7 @@ export default function MenuLateral() {
                 />
                 <span className={styles.span}>Span</span>
               </Link>
-              <Link to='' className={styles.link}>
+              <Link to='/' className={styles.link}>
                 <Chat
                   color={styleIcones("").color}
                   size={32}
