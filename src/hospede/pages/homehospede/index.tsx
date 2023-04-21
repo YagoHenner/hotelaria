@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import CardQuarto from "../../components/CardQuarto";
 import MenuLateral from "../../../globals/components/MenuLateral";
 import { Quartos } from "../../../dados/data/Quartos";
-import styles from "./HomeUsuario.module.css";
+import styles from "./HomeHospede.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
 import { useCallback, useEffect, useState } from "react";
 import { TiposQuarto } from "../../../dados/data/TiposQuarto";
@@ -76,12 +76,12 @@ export default function HomeHospede() {
                     startDate: startDate,
                     endDate: endDate,
                   }}
-                  className={styles.link}
+                  className="standardLink"
                 >
                   <CardQuarto
                     title={`Quarto ${quarto.numero}`}
                     pic={quarto.pic}
-                    location={quarto.idTipoQuarto.descricao}
+                    description={quarto.idTipoQuarto.descricao}
                   />
                 </Link>
               );

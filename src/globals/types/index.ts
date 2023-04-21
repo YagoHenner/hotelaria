@@ -11,10 +11,18 @@ export type User = {
     nome: string,
     email: string,
     telefone: string,
-    //a senha é criptografada no banco. como estamos falando de demonstração,
-    //usamos uma senha teste
+    idEndereco?: Endereco,
     senha: string,
   }
+
+export type Endereco = {
+    id: number;
+    logradouro: string;
+    bairro: string;
+    cidade: string;
+    numero: number;
+    pais: string;
+}
 
 export type Quarto = {
     id: number,

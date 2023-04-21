@@ -3,6 +3,7 @@ import HomeFuncionario from "../pages/homefuncionario";
 import AuthFuncionario from "./Autenticação/authFuncionario";
 import Solicitacoes from "../pages/solicitacoes";
 import Ocupações from "../pages/ocupações";
+import GerenciarQuarto from "../pages/gerenciarQuarto";
 
 export const RotasFuncionario = () => {
   return (
@@ -28,6 +29,14 @@ export const RotasFuncionario = () => {
         element={
           <AuthFuncionario>
             <Ocupações />
+          </AuthFuncionario>
+        }
+      />
+            <Route
+        path='/ocupacoes/:id'
+        element={
+          <AuthFuncionario>
+            <GerenciarQuarto />
           </AuthFuncionario>
         }
       />
