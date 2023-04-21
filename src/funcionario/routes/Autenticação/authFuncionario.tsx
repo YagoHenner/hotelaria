@@ -1,6 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { ContextoState, contexto } from "../../../api/context/contexto";
-import React, { useContext } from "react";
+import { contexto } from "../../../api/context/contexto";
 import { ChildrenProp } from "../../../globals/interfaces/interfaces";
 
 export default function AuthFuncionario({ children }: ChildrenProp) {

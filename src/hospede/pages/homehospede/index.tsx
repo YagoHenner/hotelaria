@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CardQuarto from "../../../globals/components/CardQuarto";
+import CardQuarto from "../../components/CardQuarto";
 import MenuLateral from "../../../globals/components/MenuLateral";
 import { Quartos } from "../../../dados/data/Quartos";
 import styles from "./HomeUsuario.module.css";

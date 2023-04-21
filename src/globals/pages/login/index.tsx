@@ -1,8 +1,7 @@
 import styles from "./Login.module.css";
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextoState, contexto } from "../../../api/context/contexto";
-import determinarUsuario from "../../utils/determinarUsuario";
+import { contexto } from "../../../api/context/contexto";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -40,7 +39,6 @@ export default function Login() {
     //validar pelo back
     // usando caso teste
     signIn(email, password);
-    console.log(tipo);
   };
 
 

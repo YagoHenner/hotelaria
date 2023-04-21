@@ -4,7 +4,7 @@ import PageTemplate from "../../../globals/components/PageTemplate";
 export default function () {
   return (
     <div>
-      <PageTemplate title={""}>
+      <PageTemplate title={"Ocupações"}>
         <div>Nova página</div>
       </PageTemplate>
     </div>

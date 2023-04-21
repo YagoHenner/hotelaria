@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import HomeFuncionario from "../pages/homefuncionario";
 import AuthFuncionario from "./Autenticação/authFuncionario";
-import React from "react";
+import Solicitacoes from "../pages/solicitacoes";
+import Ocupações from "../pages/ocupações";
 
 export const RotasFuncionario = () => {
   return (
@@ -11,6 +12,22 @@ export const RotasFuncionario = () => {
         element={
           <AuthFuncionario>
             <HomeFuncionario />
+          </AuthFuncionario>
+        }
+      />
+      <Route
+        path='/solicitacoes'
+        element={
+          <AuthFuncionario>
+            <Solicitacoes />
+          </AuthFuncionario>
+        }
+      />
+      <Route
+        path='/ocupacoes'
+        element={
+          <AuthFuncionario>
+            <Ocupações />
           </AuthFuncionario>
         }
       />

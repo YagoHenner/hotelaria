@@ -14,10 +14,10 @@ export default function Provider({ children }: ChildrenProp) {
     setTipo(9458934);
   };
 
-  useEffect(() => {
-    console.log("User: " + user?.nome);
-    console.log("Tipo " + tipo);
-  }, [user, tipo]);
+  // useEffect(() => {
+  //   console.log("User: " + user?.nome);
+  //   console.log("Tipo " + tipo);
+  // }, [user, tipo]);
 
   const signIn = (email: string, senha: string) => {
     const res = determinarUsuario(email, senha);
