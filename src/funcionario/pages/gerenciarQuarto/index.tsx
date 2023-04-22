@@ -1,12 +1,13 @@
 import styles from "./GerenciarQuarto.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Gasto, Quarto, User } from "../../../globals/types";
 import { Usuarios } from "../../../dados/data/Usuarios";
 import ModalConfirm from "../../../globals/components/ModalConfirm";
 import { useEffect, useState } from "react";
 import { Gastos } from "../../../dados/data/Gastos";
 import somarPropriedades from "../../../globals/utils/somarPropriedades";
+import { Quartos } from "../../../dados/data/Quartos";
 
 export default function GerenciarQuarto() {
   //usando usuario exemplo para mostrar teste mas o ideal
@@ -17,8 +18,8 @@ export default function GerenciarQuarto() {
   const supostoHospede = Usuarios[quartoData.id];
   const supostoGasto = [Gastos[1], Gastos[2], Gastos[3]];
 
-  const handleClose = () => {
-    setOpenModal(false);
+  const handleCloseExtrato = () => {
+    setOpenModalExtrato(false);
   };
 
   // useEffect(() => {
@@ -27,7 +28,9 @@ export default function GerenciarQuarto() {
   //     gastos = res.data
   //   }
   // })
-  const [openModal, setOpenModal] = useState(false);
+  const [openModalExtrato, setOpenModalExtrato] = useState(false);
+  const [openModalRealocar, setOpenModalRealocar] = useState(false);
+
   return (
     <PageTemplate title={"Gerenciar Quarto"}>
       <h1>Quarto {quartoData.numero}</h1>
@@ -48,7 +51,7 @@ export default function GerenciarQuarto() {
             </div>
             <div>Ações:</div>
             <button
-              onClick={() => setOpenModal(true)}
+              onClick={() => setOpenModalExtrato(true)}
               className="standardbutton"
             >
               Gerar Extrato
@@ -68,17 +71,23 @@ export default function GerenciarQuarto() {
               <li>{supostoHospede.idEndereco.cidade}</li>
               <li>{supostoHospede.idEndereco.pais}</li>
             </ul>
-            <button className="standardbutton">Realocar hóspede</button>
+            <button
+              onClick={() => setOpenModalExtrato(true)}
+              className="standardbutton"
+            >
+              Realocar hóspede
+            </button>
           </div>
         </div>
         <ModalConfirm
-          title={"Extrato detalhadado"}
+          //Modal de Gerar Extrato
+          title={"Extrato detalhado"}
           handleModalConfirm={function (): {} {
             throw new Error("Function not implemented.");
           }}
           confirmTitle={"Imprimir"}
-          openModal={openModal}
-          handleClose={handleClose}
+          openModal={openModalExtrato}
+          handleClose={handleCloseExtrato}
         >
           <div>Gastos:</div>
           <div>
@@ -91,6 +100,42 @@ export default function GerenciarQuarto() {
                 </ul>
               );
             })}
+          </div>
+        </ModalConfirm>
+        <ModalConfirm
+          //Modal de Realocar hóspede
+          title={"Realocar Hóspede"}
+          handleModalConfirm={function (): {} {
+            throw new Error("Function not implemented.");
+          }}
+          confirmTitle={"Realocar"}
+          openModal={openModalExtrato}
+          handleClose={handleCloseExtrato}
+        >
+          <div>
+            {Quartos &&
+              Quartos.map((quarto) => {
+                //simulando apenas vagos
+                if (quarto.id % 2 == 0) {
+                  return (
+                    <a
+                      onClick={() => console.log("click")}
+                      key={quarto.id}
+                      className="standardLink"
+                    >
+                      <ul>
+                        <li>Quarto {quarto.numero}</li>
+                        <li style={{ fontSize: "13px" }}>
+                          {quarto.idTipoQuarto.nome}
+                          {quarto.idTipoQuarto.id ==
+                            quartoData.idTipoQuarto.id &&
+                            ", igual o escolhido pelo hóspede"}
+                        </li>
+                      </ul>
+                    </a>
+                  );
+                }
+              })}
           </div>
         </ModalConfirm>
       </div>
