@@ -3,8 +3,7 @@ import PageTemplate from "../../../globals/components/PageTemplate";
 import { useLocation } from "react-router-dom";
 import { Quarto, User } from "../../../globals/types";
 import { Usuarios } from "../../../dados/data/Usuarios";
-import escolherObjetoAleatorio from "../../../globals/utils/escolherObjAleatorio";
-import Modal from "../../../globals/components/Modal";
+import ModalConfirm from "../../../globals/components/ModalConfirm";
 import { useEffect, useState } from "react";
 
 export default function GerenciarQuarto() {
@@ -56,10 +55,10 @@ export default function GerenciarQuarto() {
               <li>{supostoHospede.idEndereco.cidade}</li>
               <li>{supostoHospede.idEndereco.pais}</li>
             </ul>
-            <button className="standardbutton">Realoar hóspede</button>
+            <button className="standardbutton">Realocar hóspede</button>
           </div>
         </div>
-        <Modal
+        <ModalConfirm
           title={"Extrato detalhadado"}
           handleModalConfirm={function (): {} {
             throw new Error("Function not implemented.");
@@ -68,7 +67,7 @@ export default function GerenciarQuarto() {
           handleClose={handleClose}
         >
           <div>asd</div>
-        </Modal>
+        </ModalConfirm>
       </div>
     </PageTemplate>
   );
