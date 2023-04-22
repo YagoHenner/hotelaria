@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CardQuarto from "../../components/CardQuarto";
+import CardQuarto from "../../../globals/components/CardQuarto";
 import MenuLateral from "../../../globals/components/MenuLateral";
 import { Quartos } from "../../../dados/data/Quartos";
 import styles from "./HomeHospede.module.css";
@@ -29,7 +29,6 @@ export default function HomeHospede() {
   }, [getInitialStartDate, getInitialEndDate]);
 
   return (
-    <div>
       <PageTemplate title={"Quartos Disponíveis"}>
         <div className={styles.filtros}>
           De:{" "}
@@ -88,6 +87,5 @@ export default function HomeHospede() {
             })}
         </div>
       </PageTemplate>
-    </div>
   );
 }

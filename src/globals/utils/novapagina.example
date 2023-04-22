@@ -3,10 +3,8 @@ import PageTemplate from "../../../globals/components/PageTemplate";
 
 export default function () {
   return (
-    <div>
-      <PageTemplate title={""}>
-        <div>Nova página</div>
-      </PageTemplate>
-    </div>
+    <PageTemplate title={""}>
+      <div>Nova página</div>
+    </PageTemplate>
   );
 }

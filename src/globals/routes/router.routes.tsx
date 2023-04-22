@@ -6,11 +6,11 @@ import { RotasHospede } from "../../hospede/routes/rotasHospede";
 
 const Rotas = () => {
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence mode="wait">
       <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/*' element={<RotasHospede />} />
-        <Route path='/funcionario/*' element={<RotasFuncionario />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<RotasHospede />} />
+        <Route path="/funcionario/*" element={<RotasFuncionario />} />
       </Routes>
     </AnimatePresence>
   );

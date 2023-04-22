@@ -1,4 +1,4 @@
-import { CardQuartoProps } from "../../../globals/interfaces/interfaces";
+import { CardQuartoProps } from "../../interfaces/interfaces";
 import style from "./CardQuarto.module.css";
 import React from "react";
 

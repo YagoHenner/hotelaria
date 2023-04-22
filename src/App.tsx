@@ -9,7 +9,7 @@ function App() {
   return (
     <Provider>
       {/* <QueryClientProvider client={queryClient}> */}
-      <div className='App'>
+      <div className="App">
         <Router />
       </div>
       {/* </QueryClientProvider> */}

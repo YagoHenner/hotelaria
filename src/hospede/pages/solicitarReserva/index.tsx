@@ -12,18 +12,16 @@ export default function SolicitarReserva() {
   const { user } = contexto();
 
   return (
-    <div>
-      <PageTemplate title={"Solicitar Reserva"}>
-        <div>Você está solicitando reserva de:</div>
-        <div>
-          <div className='flex-column'>
-            <span>Quarto {quartoData.numero}</span>
-            <span>{quartoData.idTipoQuarto.nome}</span>
-            <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
-            <span>Quem está solicitando: {user?.nome}</span>
-          </div>
+    <PageTemplate title={"Solicitar Reserva"}>
+      <div>Você está solicitando reserva de:</div>
+      <div>
+        <div className="flex-column">
+          <span>Quarto {quartoData.numero}</span>
+          <span>{quartoData.idTipoQuarto.nome}</span>
+          <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
+          <span>Quem está solicitando: {user?.nome}</span>
         </div>
-      </PageTemplate>
-    </div>
+      </div>
+    </PageTemplate>
   );
 }
