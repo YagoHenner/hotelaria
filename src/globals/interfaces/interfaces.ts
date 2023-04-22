@@ -19,7 +19,8 @@ export interface InputDataProps {
 }
 
 export interface ModalProps {
-    setOpenModal: React.Dispatch<React.SetStateAction<any>>;
+    openModal: boolean,
+    handleClose: () => void,
     title: string;
     children: JSX.Element | JSX.Element[];
     handleModalConfirm: () => {}

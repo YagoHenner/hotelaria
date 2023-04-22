@@ -57,7 +57,7 @@
     margin: 0;
     border: solid 1px rgb(0, 0, 0, 0.2);
     border-radius: 20px;
-    box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
+    box-shadow: var(--shadow);
     background-color: white;
   }
 
@@ -70,7 +70,7 @@
     margin: 0;
     border: solid 1px rgb(0, 0, 0, 0.2);
     border-radius: 20px;
-    box-shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
+    box-shadow: var(--shadow);
     background-color: white;
   }
 

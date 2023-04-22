@@ -1,40 +1,43 @@
 import React from "react";
 import styles from "./Modal.module.css";
 import { ModalProps } from "../../interfaces/interfaces";
+import { Modal, Grow } from "@mui/material";
 
-function Modal({ title, children, setOpenModal, handleModalConfirm }:ModalProps) {
+export default function ModalConfirm({
+  title,
+  children,
+  openModal,
+  handleClose,
+  handleModalConfirm,
+}: ModalProps) {
   return (
-    <div className={styles.modalBackground}>
-      <div className={styles.modalContainer}>
-        <div className={styles.titleCloseBtn}>
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
-            Fechar
-          </button>
-        </div>
-        <div className={styles.title}>
-          <h1>{title}</h1>
-        </div>
-        <div className={styles.body}>
-          <p>{children}</p>
-        </div>
-        <div className={styles.footer}>
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
-          </button>
-          <button onClick={() => handleModalConfirm()}>Continue</button>
-        </div>
+    <Modal
+      open={openModal}
+      onClose={handleClose}
+      aria-labelledby="parent-modal-title"
+      aria-describedby="parent-modal-description"
+    >
+      <div className={styles.modal}>
+        <Grow in={openModal}>
+          <div>
+            <h1>{title}</h1>
+            <div className={styles.body}>
+              <p>{children}</p>
+            </div>
+            <div className={styles.footer}>
+              <button className="invertedbutton" onClick={handleClose}>
+                Cancel
+              </button>
+              <button
+                className="standardbutton"
+                onClick={() => handleModalConfirm()}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </Grow>
       </div>
-    </div>
+    </Modal>
   );
 }
-
-export default Modal;

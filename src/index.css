@@ -3,6 +3,7 @@
 * {
   --primary-color: rgb(255, 143, 98);
   --secondary-color: #F5F8FA;
+  --shadow: 4px 4px 7px -5px rgba(0, 0, 0, 0.56);
 }
 
 *, *::before, *::after {
@@ -72,20 +73,28 @@ input[type="date"]{
   border-radius: 3px;
 }
 
-.commonbutton {
-  background-color: var(--primary-color);
-  color: white;
+.standardbutton, .invertedbutton {
   padding: 10px 20px;
   font-size: 17px;
   text-decoration: none;
   font-weight: 600;
-  border: none;
   border-radius: 6px;
   cursor: pointer;
   }
 
-  .commonbutton:hover{
+  .invertedbutton {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color)
+  }
+
+  .standardbutton{
+    background-color: var(--primary-color);
     color: white;
+  border: none;
+  }
+
+  .standardbutton:hover{
     filter: brightness(110%);
     transition: all 0.25s ease;
   }

@@ -4,14 +4,21 @@ import { useLocation } from "react-router-dom";
 import { Quarto, User } from "../../../globals/types";
 import { Usuarios } from "../../../dados/data/Usuarios";
 import escolherObjetoAleatorio from "../../../globals/utils/escolherObjAleatorio";
+import Modal from "../../../globals/components/Modal";
+import { useEffect, useState } from "react";
 
 export default function GerenciarQuarto() {
   //usando usuario exemplo para mostrar teste mas o ideal
   //é pegar pelos dados da reserva e, por ela o hospede
   //atraves de seu cpf
-  const supostoHospede = escolherObjetoAleatorio(Usuarios);
   const location = useLocation();
   const quartoData = location.state as Quarto;
+  const supostoHospede = Usuarios[quartoData.id];
+
+  const handleClose = () => {
+    setOpenModal(false);
+  };
+  const [openModal, setOpenModal] = useState(false);
   return (
     <PageTemplate title={"Gerenciar Quarto"}>
       <h1>Quarto {quartoData.numero}</h1>
@@ -28,7 +35,12 @@ export default function GerenciarQuarto() {
             <div>Última limpeza: Data, Funcionário</div>
             <div>Avarias: Nenhuma</div>
             <div>Ações:</div>
-            <button className="commonbutton">Gerar Extrato</button>
+            <button
+              onClick={() => setOpenModal(true)}
+              className="standardbutton"
+            >
+              Gerar Extrato
+            </button>
           </div>
         </div>
         <div className={styles.cardHospede}>
@@ -44,9 +56,19 @@ export default function GerenciarQuarto() {
               <li>{supostoHospede.idEndereco.cidade}</li>
               <li>{supostoHospede.idEndereco.pais}</li>
             </ul>
-            <button className="commonbutton">Realocar hóspede</button>
+            <button className="standardbutton">Realoar hóspede</button>
           </div>
         </div>
+        <Modal
+          title={"Extrato detalhadado"}
+          handleModalConfirm={function (): {} {
+            throw new Error("Function not implemented.");
+          }}
+          openModal={openModal}
+          handleClose={handleClose}
+        >
+          <div>asd</div>
+        </Modal>
       </div>
     </PageTemplate>
   );
