@@ -1,10 +1,12 @@
 import styles from "./GerenciarQuarto.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
 import { useLocation } from "react-router-dom";
-import { Quarto, User } from "../../../globals/types";
+import { Gasto, Quarto, User } from "../../../globals/types";
 import { Usuarios } from "../../../dados/data/Usuarios";
 import ModalConfirm from "../../../globals/components/ModalConfirm";
 import { useEffect, useState } from "react";
+import { Gastos } from "../../../dados/data/Gastos";
+import somarPropriedades from "../../../globals/utils/somarPropriedades";
 
 export default function GerenciarQuarto() {
   //usando usuario exemplo para mostrar teste mas o ideal
@@ -13,10 +15,18 @@ export default function GerenciarQuarto() {
   const location = useLocation();
   const quartoData = location.state as Quarto;
   const supostoHospede = Usuarios[quartoData.id];
+  const supostoGasto = [Gastos[1], Gastos[2], Gastos[3]];
 
   const handleClose = () => {
     setOpenModal(false);
   };
+
+  // useEffect(() => {
+  //   async function PegarBackend() {
+  //     const res = api.post(`/gastos/${ocupacao.id}`)
+  //     gastos = res.data
+  //   }
+  // })
   const [openModal, setOpenModal] = useState(false);
   return (
     <PageTemplate title={"Gerenciar Quarto"}>
@@ -33,6 +43,9 @@ export default function GerenciarQuarto() {
           <div>
             <div>Última limpeza: Data, Funcionário</div>
             <div>Avarias: Nenhuma</div>
+            <div>
+              Soma dos gastos: R$ {somarPropriedades(supostoGasto, "valor")}
+            </div>
             <div>Ações:</div>
             <button
               onClick={() => setOpenModal(true)}
@@ -63,10 +76,22 @@ export default function GerenciarQuarto() {
           handleModalConfirm={function (): {} {
             throw new Error("Function not implemented.");
           }}
+          confirmTitle={"Imprimir"}
           openModal={openModal}
           handleClose={handleClose}
         >
-          <div>asd</div>
+          <div>Gastos:</div>
+          <div>
+            {supostoGasto.map((gasto: Gasto) => {
+              return (
+                <ul key={gasto.id}>
+                  <li>{gasto.descricao}</li>
+                  <li>R$ {gasto.valor}</li>
+                  <li>Data: {gasto.dtGasto}</li>
+                </ul>
+              );
+            })}
+          </div>
         </ModalConfirm>
       </div>
     </PageTemplate>

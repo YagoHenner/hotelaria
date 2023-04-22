@@ -27,7 +27,7 @@ export type Endereco = {
 export type Quarto = {
     id: number,
     status: number,
-    pic: any,
+    pic: string,
     numero: number,
     idTipoQuarto: TipoQuarto,
 }
@@ -40,4 +40,35 @@ export type TipoQuarto = {
     camaCasal: number,
     camaSolteiro: number,
     diaria: number,
+}
+
+export type Gasto = {
+id: number,
+valor: number,
+descricao: string,
+dtGasto: string,
+idOcupacao: number,
+}
+
+export type Ocupação = {
+id: number,
+codConfirmacao: number,
+idQuarto: number,
+idReserva: number,
+}
+
+export type Reserva = {
+id: number,
+dtInicio: string,
+dtFim: string,
+confirmada: number,
+cpfHospede: string,
+}
+
+export type Avaria = {
+    id: number,
+    dtRegistro: string,
+    item: string,
+    idQuarto: number,
+    idFuncionario: User;
 }

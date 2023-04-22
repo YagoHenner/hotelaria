@@ -4,7 +4,7 @@ export interface ChildrenProp {
 
 export interface CardQuartoProps {
     title: string;
-    pic: any;
+    pic: string;
     description: string;
 }
 
@@ -22,6 +22,7 @@ export interface ModalProps {
     openModal: boolean,
     handleClose: () => void,
     title: string;
+    confirmTitle: string;
     children: JSX.Element | JSX.Element[];
     handleModalConfirm: () => {}
 }

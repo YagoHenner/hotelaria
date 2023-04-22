@@ -12,7 +12,15 @@
   border-radius: 10px;
 }
 
-footer {
-  top: 0%;
-  right: 0%;
+.inModal{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.footer {
+  border: 1px solid red;
+  justify-self: flex-end;
+  margin-top: 90px;
 }

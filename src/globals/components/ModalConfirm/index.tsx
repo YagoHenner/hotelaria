@@ -8,6 +8,7 @@ export default function ModalConfirm({
   children,
   openModal,
   handleClose,
+  confirmTitle,
   handleModalConfirm,
 }: ModalProps) {
   return (
@@ -18,23 +19,23 @@ export default function ModalConfirm({
       aria-describedby="parent-modal-description"
     >
       <div className={styles.modal}>
-        <Grow in={openModal}>
+        <Grow in={openModal} className={styles.inModal}>
           <div>
             <h1>{title}</h1>
             <div className={styles.body}>
               <p>{children}</p>
             </div>
-            <div className={styles.footer}>
+            <footer className={styles.footer}>
               <button className="invertedbutton" onClick={handleClose}>
-                Cancel
+                Cancelar
               </button>
               <button
                 className="standardbutton"
                 onClick={() => handleModalConfirm()}
               >
-                Continue
+                {confirmTitle}
               </button>
-            </div>
+            </footer>
           </div>
         </Grow>
       </div>
