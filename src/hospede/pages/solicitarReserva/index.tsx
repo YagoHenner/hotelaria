@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { contexto } from "../../../api/context/contexto";
 import CardQuarto from "../../../globals/components/CardQuarto";
 import { DateTime } from "luxon";
+import styles from "./SolicitarReserva.module.css";
 import ConsoleButton from "../../../globals/utils/consoleButton";
 
 export default function SolicitarReserva() {
@@ -28,19 +29,43 @@ export default function SolicitarReserva() {
             pic={quartoData.pic}
             description={quartoData.idTipoQuarto.nome}
           ></CardQuarto>
-          <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
-          <span>
-            Período: De
-            {startDate}
-            até
-            {endDate}
-            Gasto mínimo estimado: R$
-            {diff.days * quartoData.idTipoQuarto.diaria}
-          </span>
+          <div>
+            <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
+            <span>
+              Período: De
+              {startDate}
+              até
+              {endDate}
+              Gasto mínimo estimado: R$
+              {diff.days * quartoData.idTipoQuarto.diaria}
+            </span>
+          </div>
         </div>
-        <div>
+        <div className={styles.dadosUser}>
           <label htmlFor="user">Seu nome</label>
-          <input id="user" placeholder={`${user?.nome}`}></input>
+          <input
+            id="user"
+            style={{ width: "600px" }}
+            placeholder={`${user?.nome}`}
+          ></input>
+          <label htmlFor="cpf">CPF/Identificação</label>
+          <input
+            id="cpf"
+            style={{ width: "600px" }}
+            placeholder={`${user?.cpf}`}
+          ></input>
+          <label htmlFor="email">E-mail</label>
+          <input
+            id="email"
+            style={{ width: "600px" }}
+            placeholder={`${user?.email}`}
+          ></input>
+          <label htmlFor="telefone">Telefone</label>
+          <input
+            id="telefone"
+            style={{ width: "600px" }}
+            placeholder={`${user?.telefone}`}
+          ></input>
         </div>
       </div>
     </PageTemplate>

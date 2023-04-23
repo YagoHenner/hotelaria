@@ -55,7 +55,7 @@ body {
     transition: all 0.5s ease;
 }
 
-input[type="date"]{
+input{
   background-color: white;
   padding: 15px 20px;
   color: black;
