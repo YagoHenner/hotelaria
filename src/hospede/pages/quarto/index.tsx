@@ -50,9 +50,7 @@ export default function QuartoPage() {
               <div className={styles.reservaDescription}>
                 <div className={styles.dataEscolhida}>
                   <span>Data escolhida:</span>
-                  {`${startDate.c.day}/${startDate.c.month} `}
-                  até
-                  {` ${endDate.c.day}/${endDate.c.month}`}
+                  {startDate} até {endDate}
                 </div>
                 <div className={styles.qtdDiaria}>
                   <span>Diária:</span>

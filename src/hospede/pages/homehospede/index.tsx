@@ -50,6 +50,9 @@ export default function HomeHospede() {
             setEndDate(DateTime.fromISO(event.target.value));
           }}
         ></input>
+        <button onClick={() => console.log(startDate.toFormat("dd/MM"))}>
+          asdasd
+        </button>
         Tipo:{" "}
         <select
           value={tipoFiltro}
@@ -75,8 +78,8 @@ export default function HomeHospede() {
                 to={`./quarto/${quarto.id}`}
                 state={{
                   quarto: quarto,
-                  startDate: startDate,
-                  endDate: endDate,
+                  startDate: startDate.toFormat("dd/MM"),
+                  endDate: endDate.toFormat("dd/MM"),
                 }}
                 className="standardLink"
               >
