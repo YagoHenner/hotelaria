@@ -7,8 +7,8 @@ import CardQuarto from "../../../globals/components/CardQuarto";
 export default function SolicitarReserva() {
   const location = useLocation();
   const quartoData = location.state.quarto as Quarto;
-  const startDate = location.state.startDate as Date;
-  const endDate = location.state.endDate as Date;
+  const startDate = location.state.startDate;
+  const endDate = location.state.endDate;
   const { user } = contexto();
 
   return (
@@ -23,8 +23,10 @@ export default function SolicitarReserva() {
           ></CardQuarto>
           <span>Diária: R${quartoData.idTipoQuarto.diaria}</span>
           <span>
-            Período: De {startDate.toLocaleDateString()} à{" "}
-            {endDate.toLocaleDateString()}
+            Período: De
+            {` ${startDate.c.day}/${startDate.c.month} `}
+            até
+            {` ${endDate.c.day}/${endDate.c.month} `}
           </span>
         </div>
         <div>

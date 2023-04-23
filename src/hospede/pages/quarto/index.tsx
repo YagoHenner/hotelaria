@@ -3,12 +3,13 @@ import styles from "./Quarto.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
 import { Quarto } from "../../../globals/types";
 import { Link, useLocation } from "react-router-dom";
+import { DateTime } from "luxon";
 
 export default function QuartoPage() {
   const location = useLocation();
   const quartoData = location.state.quarto as Quarto;
-  const startDate = location.state.startDate as Date;
-  const endDate = location.state.endDate as Date;
+  const startDate = location.state.startDate;
+  const endDate = location.state.endDate;
 
   return (
     <PageTemplate title={"Detalhes do Quarto"}>
@@ -49,15 +50,9 @@ export default function QuartoPage() {
               <div className={styles.reservaDescription}>
                 <div className={styles.dataEscolhida}>
                   <span>Data escolhida:</span>
-                  {`${startDate?.getDate()}/${startDate
-                    .getMonth()
-                    .toString()
-                    .padStart(2, "0")} `}
-                  até{" "}
-                  {`${endDate?.getDate()}/${endDate
-                    .getMonth()
-                    .toString()
-                    .padStart(2, "0")}`}
+                  {`${startDate.c.day}/${startDate.c.month} `}
+                  até
+                  {` ${endDate.c.day}/${endDate.c.month}`}
                 </div>
                 <div className={styles.qtdDiaria}>
                   <span>Diária:</span>
