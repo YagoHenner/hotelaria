@@ -26,3 +26,10 @@ export interface ModalProps {
     children: JSX.Element | JSX.Element[];
     handleModalConfirm: () => {}
 }
+
+export interface CardParentProps {
+    children: JSX.Element | JSX.Element[],
+    width?: string,
+    height?: string,
+
+}
