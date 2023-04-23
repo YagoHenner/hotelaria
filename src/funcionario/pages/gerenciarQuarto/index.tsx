@@ -22,6 +22,10 @@ export default function GerenciarQuarto() {
     setOpenModalExtrato(false);
   };
 
+  const handleCloseRealocar = () => {
+    setOpenModalRealocar(false);
+  };
+
   // useEffect(() => {
   //   async function PegarBackend() {
   //     const res = api.post(`/gastos/${ocupacao.id}`)
@@ -72,7 +76,7 @@ export default function GerenciarQuarto() {
               <li>{supostoHospede.idEndereco.pais}</li>
             </ul>
             <button
-              onClick={() => setOpenModalExtrato(true)}
+              onClick={() => setOpenModalRealocar(true)}
               className="standardbutton"
             >
               Realocar hóspede
@@ -109,8 +113,8 @@ export default function GerenciarQuarto() {
             throw new Error("Function not implemented.");
           }}
           confirmTitle={"Realocar"}
-          openModal={openModalExtrato}
-          handleClose={handleCloseExtrato}
+          openModal={openModalRealocar}
+          handleClose={handleCloseRealocar}
         >
           <div>
             {Quartos &&
