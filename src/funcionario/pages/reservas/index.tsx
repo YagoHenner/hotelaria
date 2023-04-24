@@ -15,13 +15,14 @@ type ReservasPenConf = {
   pendentes: Ocupação[];
   confirmadas: Ocupação[];
 };
+
 export default function Reservas() {
   const handleConfirmarReserva = async (ocupacao: Ocupação) => {
     try {
       await api
         .put(`/reservas/${ocupacao.id}`, {
           ...ocupacao,
-          codConfirmacao: 0,
+          codConfirmacao: 1,
         })
         .then(() => alert("Reserva confirmada"));
     } catch (error) {
@@ -61,7 +62,7 @@ export default function Reservas() {
     }
     get();
     console.log(ocupacoes);
-  }, []);
+  }, [ocupacoes]);
   return (
     <PageTemplate title={"Reservas"}>
       <div className="flex-row">
@@ -152,16 +153,14 @@ export default function Reservas() {
               <CardHospede
                 hospede={modalSolicitacao.ocupacao.idReserva.cpfHospede}
               ></CardHospede>
-              <button
-                className="standardbutton"
-                onClick={() =>
-                  handleConfirmarReserva(modalSolicitacao.ocupacao)
-                }
-              >
-                Confirmar
-              </button>
             </div>
           )}
+          <button
+            className="standardbutton"
+            onClick={() => handleConfirmarReserva(modalSolicitacao.ocupacao)}
+          >
+            Confirmar
+          </button>
         </div>
       </ModalConfirm>
     </PageTemplate>
