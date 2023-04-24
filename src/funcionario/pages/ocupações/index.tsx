@@ -3,6 +3,7 @@ import PageTemplate from "../../../globals/components/PageTemplate";
 import { Link } from "react-router-dom";
 import { Quartos } from "../../../dados/data/Quartos";
 import CardQuarto from "../../../globals/components/CardQuarto";
+import { Images } from "../../../dados/data/Images";
 
 export default function () {
   return (
@@ -21,7 +22,7 @@ export default function () {
                 >
                   <CardQuarto
                     title={`Quarto ${quarto.numero}`}
-                    imagename={quarto.imagename}
+                    imagename={Images[quarto.id].imagename}
                     description={"Clique para ver detalhes"}
                   />
                 </Link>

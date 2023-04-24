@@ -4,6 +4,7 @@ import PageTemplate from "../../../globals/components/PageTemplate";
 import { Quarto } from "../../../globals/types";
 import { Link, useLocation } from "react-router-dom";
 import { DateTime } from "luxon";
+import { Images } from "../../../dados/data/Images";
 
 export default function QuartoPage() {
   const location = useLocation();
@@ -14,7 +15,7 @@ export default function QuartoPage() {
   return (
     <PageTemplate title={"Detalhes do Quarto"}>
       <div className={styles.fotoDiv}>
-        <img src={quartoData.imagename}></img>
+        <img src={Images[quartoData.id].imagename}></img>
       </div>
       <div className='flex-row' style={{ maxWidth: "90%" }}>
         <div className={styles.section}>

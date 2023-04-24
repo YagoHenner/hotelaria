@@ -1,12 +1,14 @@
 import styles from "./Reservas.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
 import CardParent from "../../../globals/components/CardParent";
-import { Ocupações } from "../../../dados/data/Ocupações";
+import { OcupaçãoDefault } from "../../../dados/data/Ocupações";
 import { Link } from "react-router-dom";
 import ModalConfirm from "../../../globals/components/ModalConfirm";
 import { useEffect, useState } from "react";
-import { Ocupação } from "../../../globals/types";
+import { Endereco, Ocupação } from "../../../globals/types";
 import api from "../../../api/axios/api";
+import CardHospede from "../../../globals/components/CardHospede";
+import { Images } from "../../../dados/data/Images";
 
 type ReservasPenConf = {
   pendentes: Ocupação[];
@@ -15,13 +17,13 @@ type ReservasPenConf = {
 export default function Reservas() {
   const [modalSolicitacao, setModalSolicitacao] = useState({
     open: false,
-    ocupacao: Ocupações[0],
+    ocupacao: OcupaçãoDefault,
   });
 
   const [ocupacoes, setOcupacoes] = useState<ReservasPenConf>();
 
   const handleCloseSolicitacao = () => {
-    setModalSolicitacao({ open: false, ocupacao: Ocupações[0] });
+    setModalSolicitacao({ open: false, ocupacao: OcupaçãoDefault });
   };
 
   useEffect(() => {
@@ -98,9 +100,30 @@ export default function Reservas() {
       >
         <div>
           {modalSolicitacao.ocupacao && (
-            <div>
-              <div>Quarto {modalSolicitacao.ocupacao.idQuarto.numero}</div>
-              <div>{modalSolicitacao.ocupacao.idQuarto.id}</div>
+            <div className='flex-row space-between'>
+              <CardParent>
+                <div className='padding'>
+                  <div>
+                    {Images[modalSolicitacao.ocupacao.idQuarto.id].imagename}
+                  </div>
+                  <h4>Quarto {modalSolicitacao.ocupacao.idQuarto.numero}</h4>
+                  <div>
+                    Diária: R$
+                    {modalSolicitacao.ocupacao.idQuarto.idTipoQuarto.diaria}
+                  </div>
+                  <div>
+                    Início: {modalSolicitacao.ocupacao.idReserva.dtInicio}
+                  </div>
+                  <div>Fim: {modalSolicitacao.ocupacao.idReserva.dtFim}</div>
+                  <div>
+                    Avarias:{" "}
+                    {modalSolicitacao.ocupacao.idQuarto.avaria ? "Sim" : "Não"}
+                  </div>
+                </div>
+              </CardParent>
+              <CardHospede
+                hospede={modalSolicitacao.ocupacao.idReserva.cpfHospede}
+              ></CardHospede>
             </div>
           )}
         </div>

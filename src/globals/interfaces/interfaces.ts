@@ -1,3 +1,5 @@
+import { User } from "../types";
+
 export interface ChildrenProp {
     children: JSX.Element;
 }
@@ -29,6 +31,13 @@ export interface ModalProps {
 
 export interface CardParentProps {
     children: JSX.Element | JSX.Element[],
+    width?: string,
+    height?: string,
+}
+
+export interface CardHospedeProps {
+    children?: JSX.Element | JSX.Element[],
+    hospede: User,
     width?: string,
     height?: string,
 }

@@ -8,6 +8,8 @@ import { useCallback, useEffect, useState } from "react";
 import { TiposQuarto } from "../../../dados/data/TiposQuarto";
 import { DateTime } from "luxon";
 
+import { Images } from "../../../dados/data/Images";
+
 export default function HomeHospede() {
   // const getInitialStartDate = useCallback(() => {
   //   const date = new Date();
@@ -82,7 +84,7 @@ export default function HomeHospede() {
               >
                 <CardQuarto
                   title={`Quarto ${quarto.numero}`}
-                  imagename={quarto.imagename}
+                  imagename={Images[quarto.id].imagename}
                   description={quarto.idTipoQuarto.descricao}
                 />
               </Link>

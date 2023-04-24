@@ -7,6 +7,7 @@ import { DateTime } from "luxon";
 import styles from "./SolicitarReserva.module.css";
 import ConsoleButton from "../../../globals/utils/consoleButton";
 import CardParent from "../../../globals/components/CardParent";
+import { Images } from "../../../dados/data/Images";
 
 export default function SolicitarReserva() {
   const location = useLocation();
@@ -28,7 +29,7 @@ export default function SolicitarReserva() {
           <div className='flex-row'>
             <CardQuarto
               title={`Quarto ${quartoData.numero}`}
-              imagename={quartoData.imagename}
+              imagename={Images[quartoData.id].imagename}
               description={quartoData.idTipoQuarto.nome}
             ></CardQuarto>
             <CardParent>

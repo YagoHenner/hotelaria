@@ -69,7 +69,7 @@ export type Avaria = {
     id: number,
     dtRegistro: string,
     item: string,
-    idQuarto: number,
+    idQuarto: Quarto,
     idFuncionario: User;
 }
 
