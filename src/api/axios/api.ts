@@ -4,7 +4,6 @@ function setupAPIClient(ctx = undefined) {
   const api = axios.create({
     baseURL: `${import.meta.env.API}`,
   });
-  console.log(api)
   return api;
 }
 const api = setupAPIClient();

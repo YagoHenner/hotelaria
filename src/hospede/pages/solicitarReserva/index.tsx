@@ -28,7 +28,7 @@ export default function SolicitarReserva() {
           <div className='flex-row'>
             <CardQuarto
               title={`Quarto ${quartoData.numero}`}
-              pic={quartoData.pic}
+              imagename={quartoData.imagename}
               description={quartoData.idTipoQuarto.nome}
             ></CardQuarto>
             <CardParent>

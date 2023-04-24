@@ -14,9 +14,9 @@ export default function QuartoPage() {
   return (
     <PageTemplate title={"Detalhes do Quarto"}>
       <div className={styles.fotoDiv}>
-        <img src={quartoData.pic}></img>
+        <img src={quartoData.imagename}></img>
       </div>
-      <div className="flex-row" style={{ maxWidth: "90%" }}>
+      <div className='flex-row' style={{ maxWidth: "90%" }}>
         <div className={styles.section}>
           <div className={styles.sectionTitle}>
             Quarto {`${quartoData.numero}`}

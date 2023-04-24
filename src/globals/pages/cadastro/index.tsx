@@ -25,7 +25,10 @@ export default function Cadastro() {
           telefone: data.telefone,
           endereco: data.idEndereco,
         })
-        .then(() => navigate("/login"));
+        .then(() => alert("Conta criada com sucesso. Redirecionando à login"))
+        .finally(() => {
+          setTimeout(() => navigate("/login"), 2000);
+        });
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const retorno = error.response?.data as any;

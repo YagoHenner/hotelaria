@@ -23,112 +23,112 @@ export const Quartos = [
     id: 0,
     status: 1,
     numero: 101,
-    pic: imagem1,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    imagename: imagem1,
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 1,
     status: 1,
     numero: 102,
-    pic: imagem2,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    imagename: imagem2,
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 2,
     status: 1,
     numero: 103,
-    pic: imagem3,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    imagename: imagem3,
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 3,
-    pic: imagem4,
+    imagename: imagem4,
     status: 1,
     numero: 104,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 4,
-    pic: imagem5,
+    imagename: imagem5,
     status: 1,
     numero: 201,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 5,
-    pic: imagem6,
+    imagename: imagem6,
     status: 1,
     numero: 202,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 6,
-    pic: imagem7,
+    imagename: imagem7,
     status: 1,
     numero: 203,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 7,
-    pic: imagem8,
+    imagename: imagem8,
     status: 1,
     numero: 204,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 8,
-    pic: imagem9,
+    imagename: imagem9,
     status: 1,
     numero: 301,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 9,
-    pic: imagem10,
+    imagename: imagem10,
     status: 1,
     numero: 302,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 10,
-    pic: imagem11,
+    imagename: imagem11,
     status: 1,
     numero: 303,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 11,
-    pic: imagem12,
+    imagename: imagem12,
     status: 1,
     numero: 304,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 12,
-    pic: imagem13,
+    imagename: imagem13,
     status: 1,
     numero: 401,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 13,
-    pic: imagem14,
+    imagename: imagem14,
     status: 1,
     numero: 402,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 14,
-    pic: imagem15,
+    imagename: imagem15,
     status: 1,
     numero: 403,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
   {
     id: 15,
-    pic: imagem16,
+    imagename: imagem16,
     status: 1,
     numero: 404,
-    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto)
+    idTipoQuarto: escolherObjetoAleatorio(TiposQuarto),
   },
 ];

@@ -4,7 +4,7 @@ export interface ChildrenProp {
 
 export interface CardQuartoProps {
     title: string;
-    pic: string;
+    imagename: string;
     description: string;
 }
 

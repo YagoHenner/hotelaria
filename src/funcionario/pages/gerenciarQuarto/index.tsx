@@ -122,11 +122,7 @@ export default function GerenciarQuarto() {
                 //simulando apenas vagos
                 if (quarto.id % 2 == 0) {
                   return (
-                    <a
-                      onClick={() => console.log("click")}
-                      key={quarto.id}
-                      className='standardLink'
-                    >
+                    <a key={quarto.id} className='standardLink'>
                       <ul>
                         <li>Quarto {quarto.numero}</li>
                         <li style={{ fontSize: "13px" }}>

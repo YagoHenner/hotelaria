@@ -36,7 +36,7 @@ export default function HomeHospede() {
       <div className={styles.filtros}>
         De:{" "}
         <input
-          type="date"
+          type='date'
           value={startDate.toISODate() ?? ""}
           onChange={(event: any) =>
             setStartDate(DateTime.fromISO(event.target.value))
@@ -44,15 +44,12 @@ export default function HomeHospede() {
         ></input>
         Até:{" "}
         <input
-          type="date"
+          type='date'
           value={endDate.toISODate() ?? ""}
           onChange={(event: any) => {
             setEndDate(DateTime.fromISO(event.target.value));
           }}
         ></input>
-        <button onClick={() => console.log(startDate.toFormat("dd/MM"))}>
-          asdasd
-        </button>
         Tipo:{" "}
         <select
           value={tipoFiltro}
@@ -81,11 +78,11 @@ export default function HomeHospede() {
                   startDate: startDate.toFormat("dd/MM"),
                   endDate: endDate.toFormat("dd/MM"),
                 }}
-                className="standardLink"
+                className='standardLink'
               >
                 <CardQuarto
                   title={`Quarto ${quarto.numero}`}
-                  pic={quarto.pic}
+                  imagename={quarto.imagename}
                   description={quarto.idTipoQuarto.descricao}
                 />
               </Link>

@@ -11,12 +11,11 @@ export type User = {
     nome: string,
     email: string,
     telefone: string,
-    idEndereco?: Endereco,
+    idEndereco?: Endereco[],
     senha: string,
   }
 
 export type Endereco = {
-    id: number;
     logradouro: string;
     bairro: string;
     cidade: string;
@@ -27,8 +26,9 @@ export type Endereco = {
 export type Quarto = {
     id: number,
     status: number,
-    pic: string,
+    imagename: string,
     numero: number,
+    avaria?: Avaria[],
     idTipoQuarto: TipoQuarto,
 }
 

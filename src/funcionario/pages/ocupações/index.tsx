@@ -17,11 +17,11 @@ export default function () {
                   key={quarto.id}
                   to={`./${quarto.id}`}
                   state={quarto}
-                  className="standardLink"
+                  className='standardLink'
                 >
                   <CardQuarto
                     title={`Quarto ${quarto.numero}`}
-                    pic={quarto.pic}
+                    imagename={quarto.imagename}
                     description={"Clique para ver detalhes"}
                   />
                 </Link>
