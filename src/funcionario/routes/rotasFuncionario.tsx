@@ -4,6 +4,7 @@ import AuthFuncionario from "./Autenticação/authFuncionario";
 import Reservas from "../pages/reservas";
 import Ocupações from "../pages/ocupações";
 import GerenciarQuarto from "../pages/gerenciarQuarto";
+import TemporadasPage from "../pages/temporada";
 
 export const RotasFuncionario = () => {
   return (
@@ -37,6 +38,14 @@ export const RotasFuncionario = () => {
         element={
           <AuthFuncionario>
             <GerenciarQuarto />
+          </AuthFuncionario>
+        }
+      />
+      <Route
+        path="/temporadas"
+        element={
+          <AuthFuncionario>
+            <TemporadasPage />
           </AuthFuncionario>
         }
       />

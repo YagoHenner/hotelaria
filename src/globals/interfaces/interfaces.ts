@@ -24,7 +24,7 @@ export interface ModalProps {
     title: string;
     confirmTitle: string;
     children: JSX.Element | JSX.Element[];
-    handleModalConfirm: () => {}
+    handleModalConfirm?: () => {}
 }
 
 export interface CardParentProps {

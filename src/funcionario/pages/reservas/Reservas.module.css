@@ -1,0 +1,10 @@
+.tituloDado {
+    border-bottom: 1px solid #D5D5D5;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #585858;
+    font-size: 13px;
+  }

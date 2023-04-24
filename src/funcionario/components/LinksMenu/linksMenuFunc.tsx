@@ -1,6 +1,7 @@
 import {
   AddressBook,
   Bell,
+  Calendar,
   DoorOpen,
   House,
   IconWeight,
@@ -61,6 +62,18 @@ export const LinksMenuFunc = () => {
               }
             />
             <span className={styles.span}>Ocupações</span>
+          </Link>
+          <Link to="/funcionario/temporadas" className={styles.link}>
+            <Calendar
+              color={styleIcones("/funcionario/temporadas").color}
+              size={32}
+              weight={
+                styleIcones("/funcionario/temporadas").weight as
+                  | IconWeight
+                  | undefined
+              }
+            />
+            <span className={styles.span}>Temporadas</span>
           </Link>
           <Link
             onClick={() => logOut()}

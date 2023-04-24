@@ -25,17 +25,19 @@ export default function ModalConfirm({
             <div className={styles.body}>
               <p>{children}</p>
             </div>
-            <footer className={styles.footer}>
-              <button className="invertedbutton" onClick={handleClose}>
-                Cancelar
-              </button>
-              <button
-                className="standardbutton"
-                onClick={() => handleModalConfirm()}
-              >
-                {confirmTitle}
-              </button>
-            </footer>
+            {handleModalConfirm && (
+              <footer className={styles.footer}>
+                <button className="invertedbutton" onClick={handleClose}>
+                  Cancelar
+                </button>
+                <button
+                  className="standardbutton"
+                  onClick={() => handleModalConfirm()}
+                >
+                  {confirmTitle}
+                </button>
+              </footer>
+            )}
           </div>
         </Grow>
       </div>

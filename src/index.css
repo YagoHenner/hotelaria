@@ -33,6 +33,10 @@ body {
   overflow-x: hidden;
 }
 
+.padding {
+  padding: 20px
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;

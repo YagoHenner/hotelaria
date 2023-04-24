@@ -53,8 +53,8 @@ idOcupacao: number,
 export type Ocupação = {
 id: number,
 codConfirmacao: number,
-idQuarto: number,
-idReserva: number,
+idQuarto: Quarto,
+idReserva: Reserva,
 }
 
 export type Reserva = {
@@ -62,7 +62,7 @@ id: number,
 dtInicio: string,
 dtFim: string,
 confirmada: number,
-cpfHospede: string,
+cpfHospede: User,
 }
 
 export type Avaria = {
@@ -71,4 +71,13 @@ export type Avaria = {
     item: string,
     idQuarto: number,
     idFuncionario: User;
+}
+
+export type Temporada ={
+    id: number, 
+    nomeTemporada: string, 
+    porcentagem: number, 
+    dtInicio: string, 
+    dtFim: string,
+    prioridade: boolean,
 }
