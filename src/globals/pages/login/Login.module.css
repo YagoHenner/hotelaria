@@ -7,6 +7,18 @@
     overflow: hidden;
 }
 
+.lembrarEesqueci, .lembrar {
+    display: flex;
+    align-items: center;
+}
+
+.lembrarEesqueci {
+    justify-content: space-between;
+}
+
+.lembrar label {
+    margin-bottom: 5px;
+}
 
 .bloco {
     height: 85vh;

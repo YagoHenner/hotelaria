@@ -9,12 +9,40 @@ import { Endereco, Ocupação } from "../../../globals/types";
 import api from "../../../api/axios/api";
 import CardHospede from "../../../globals/components/CardHospede";
 import { Images } from "../../../dados/data/Images";
+import axios from "axios";
 
 type ReservasPenConf = {
   pendentes: Ocupação[];
   confirmadas: Ocupação[];
 };
 export default function Reservas() {
+  const handleConfirmarReserva = async (ocupacao: Ocupação) => {
+    try {
+      await api
+        .put(`/reservas/${ocupacao.id}`, {
+          ...ocupacao,
+          codConfirmacao: 0,
+        })
+        .then(() => alert("Reserva confirmada"));
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const retorno = error.response?.data as any;
+        if (retorno?.show) {
+          if (retorno.tipo === "info") {
+            alert(retorno.info);
+          } else {
+            if (retorno.error) {
+              alert(retorno.error);
+            }
+          }
+        } else {
+          alert("Algo deu errado");
+        }
+      } else {
+        alert("Algo deu errado");
+      }
+    }
+  };
   const [modalSolicitacao, setModalSolicitacao] = useState({
     open: false,
     ocupacao: OcupaçãoDefault,
@@ -36,25 +64,25 @@ export default function Reservas() {
   }, []);
   return (
     <PageTemplate title={"Reservas"}>
-      <div className='flex-row'>
-        <CardParent height='600px'>
+      <div className="flex-row">
+        <CardParent height="600px">
           <div className={styles.tituloDado}>Solicitações Pendentes</div>
-          <div className='flex-column padding'>
+          <div className="flex-column padding">
             {ocupacoes?.pendentes &&
               ocupacoes.pendentes.map((item: any) => {
                 return (
                   <Link
-                    to=''
+                    to=""
                     onClick={() =>
                       setModalSolicitacao({
                         open: true,
                         ocupacao: item,
                       })
                     }
-                    className='standardLink'
+                    className="standardLink"
                     key={item.id}
                   >
-                    <div className='flex-row space-between'>
+                    <div className="flex-row space-between">
                       <span>Quarto {item.idQuarto.numero}</span>
                       <ul>
                         <li>
@@ -67,18 +95,18 @@ export default function Reservas() {
               })}
           </div>
         </CardParent>
-        <CardParent height='600px'>
+        <CardParent height="600px">
           <div className={styles.tituloDado}>Reservas Confirmadas</div>
-          <div className='flex-column padding'>
+          <div className="flex-column padding">
             {ocupacoes?.confirmadas.map((item: Ocupação) => {
               return (
                 <Link
                   to={`/funcionario/ocupacoes/${item.idQuarto.id}`}
-                  className='standardLink'
+                  className="standardLink"
                   key={item.id}
                   state={item.idQuarto}
                 >
-                  <div className='flex-row space-between'>
+                  <div className="flex-row space-between">
                     <span>Quarto {item.idQuarto.numero}</span>
                     <ul>
                       <li>
@@ -100,9 +128,9 @@ export default function Reservas() {
       >
         <div>
           {modalSolicitacao.ocupacao && (
-            <div className='flex-row space-between'>
+            <div className="flex-row space-between">
               <CardParent>
-                <div className='padding'>
+                <div className="padding">
                   <div>
                     {Images[modalSolicitacao.ocupacao.idQuarto.id].imagename}
                   </div>
@@ -124,6 +152,14 @@ export default function Reservas() {
               <CardHospede
                 hospede={modalSolicitacao.ocupacao.idReserva.cpfHospede}
               ></CardHospede>
+              <button
+                className="standardbutton"
+                onClick={() =>
+                  handleConfirmarReserva(modalSolicitacao.ocupacao)
+                }
+              >
+                Confirmar
+              </button>
             </div>
           )}
         </div>
