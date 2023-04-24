@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomeFuncionario from "../pages/homefuncionario";
 import AuthFuncionario from "./Autenticação/authFuncionario";
-import Solicitacoes from "../pages/solicitacoes";
+import Reservas from "../pages/reservas";
 import Ocupações from "../pages/ocupações";
 import GerenciarQuarto from "../pages/gerenciarQuarto";
 
@@ -9,7 +9,7 @@ export const RotasFuncionario = () => {
   return (
     <Routes>
       <Route
-        path='/'
+        path="/"
         element={
           <AuthFuncionario>
             <HomeFuncionario />
@@ -17,23 +17,23 @@ export const RotasFuncionario = () => {
         }
       />
       <Route
-        path='/solicitacoes'
+        path="/reservas"
         element={
           <AuthFuncionario>
-            <Solicitacoes />
+            <Reservas />
           </AuthFuncionario>
         }
       />
       <Route
-        path='/ocupacoes'
+        path="/ocupacoes"
         element={
           <AuthFuncionario>
             <Ocupações />
           </AuthFuncionario>
         }
       />
-            <Route
-        path='/ocupacoes/:id'
+      <Route
+        path="/ocupacoes/:id"
         element={
           <AuthFuncionario>
             <GerenciarQuarto />

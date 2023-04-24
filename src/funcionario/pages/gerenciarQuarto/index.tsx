@@ -38,7 +38,7 @@ export default function GerenciarQuarto() {
   return (
     <PageTemplate title={"Gerenciar Quarto"}>
       <h1>Quarto {quartoData.numero}</h1>
-      <div className={styles.sections}>
+      <div className="flex-row">
         <div className={styles.quartoSection}>
           Tipo:
           <ul>

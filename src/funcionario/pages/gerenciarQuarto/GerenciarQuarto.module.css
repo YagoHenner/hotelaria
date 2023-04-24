@@ -17,11 +17,6 @@
     padding-top: 6px;
   }
 
-  .sections {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 
   .modal {
     display: flex;
