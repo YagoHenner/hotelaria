@@ -1,5 +1,5 @@
 import { Funcionarios } from "../../dados/data/Funcionarios";
-import { Usuarios } from "../../dados/data/Usuarios";
+import { Hospedes } from "../../dados/data/Hospedes";
 import { User } from "../types";
 
 export default function determinarUsuario(email: string, senha: string) {
@@ -14,7 +14,7 @@ export default function determinarUsuario(email: string, senha: string) {
   });
 
   if (!user) {
-    Usuarios.forEach((item: User) => {
+    Hospedes.forEach((item: User) => {
       if (item.email === email && item.senha === senha) {
         user = item;
         tipo = 1;

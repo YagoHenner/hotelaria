@@ -2,7 +2,7 @@ import styles from "./GerenciarQuarto.module.css";
 import PageTemplate from "../../../globals/components/PageTemplate";
 import { Link, useLocation } from "react-router-dom";
 import { Gasto, Quarto, User } from "../../../globals/types";
-import { Usuarios } from "../../../dados/data/Usuarios";
+import { Hospedes } from "../../../dados/data/Hospedes";
 import ModalConfirm from "../../../globals/components/ModalConfirm";
 import { useEffect, useState } from "react";
 import { Gastos } from "../../../dados/data/Gastos";
@@ -15,7 +15,7 @@ export default function GerenciarQuarto() {
   //atraves de seu cpf
   const location = useLocation();
   const quartoData = location.state as Quarto;
-  const supostoHospede = Usuarios[quartoData.id];
+  const supostoHospede = Hospedes[quartoData.id];
   const supostoGasto = [Gastos[1], Gastos[2], Gastos[3]];
 
   const handleCloseExtrato = () => {
@@ -38,7 +38,7 @@ export default function GerenciarQuarto() {
   return (
     <PageTemplate title={"Gerenciar Quarto"}>
       <h1>Quarto {quartoData.numero}</h1>
-      <div className="flex-row">
+      <div className='flex-row'>
         <div className={styles.quartoSection}>
           Tipo:
           <ul>
@@ -56,7 +56,7 @@ export default function GerenciarQuarto() {
             <div>Ações:</div>
             <button
               onClick={() => setOpenModalExtrato(true)}
-              className="standardbutton"
+              className='standardbutton'
             >
               Gerar Extrato
             </button>
@@ -77,7 +77,7 @@ export default function GerenciarQuarto() {
             </ul>
             <button
               onClick={() => setOpenModalRealocar(true)}
-              className="standardbutton"
+              className='standardbutton'
             >
               Realocar hóspede
             </button>
@@ -125,7 +125,7 @@ export default function GerenciarQuarto() {
                     <a
                       onClick={() => console.log("click")}
                       key={quarto.id}
-                      className="standardLink"
+                      className='standardLink'
                     >
                       <ul>
                         <li>Quarto {quarto.numero}</li>

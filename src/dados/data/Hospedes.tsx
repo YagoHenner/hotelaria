@@ -1,7 +1,7 @@
 import { Enderecos } from "./Enderecos";
 import escolherObjetoAleatorio from "../../globals/utils/escolherObjAleatorio";
 
-export const Usuarios = [
+export const Hospedes = [
   {
     cpf: "740.948.750-00",
     nome: "Usuário",
@@ -75,5 +75,5 @@ export const Usuarios = [
     telefone: "+558199876543",
     senha: "senha999",
     idEndereco: escolherObjetoAleatorio(Enderecos),
-  }
+  },
 ];
