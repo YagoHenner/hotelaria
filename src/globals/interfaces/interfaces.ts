@@ -31,5 +31,16 @@ export interface CardParentProps {
     children: JSX.Element | JSX.Element[],
     width?: string,
     height?: string,
+}
 
+export interface InputHookProps {
+    name: string;
+    label?: string;
+    type: string;
+    placeholder?: string;
+    control: any;
+    width?: string;
+    height?: string;
+    defaultValue?: string;
+    obrigatorio?: boolean;
 }

@@ -1,0 +1,11 @@
+.formCadastro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.formCadastro button {
+    margin-top: 30px;
+}

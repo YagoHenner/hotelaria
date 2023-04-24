@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { contexto } from "../../../api/context/contexto";
 
 export default function Login() {
@@ -81,7 +81,10 @@ export default function Login() {
               Acessar plataforma
             </button>
             <div>
-              Não está cadastrado? <a>Criar minha conta</a>
+              Não está cadastrado?{" "}
+              <Link className='standardLink' to='/cadastro'>
+                Criar minha conta
+              </Link>
             </div>
           </form>
         </div>

@@ -3,14 +3,16 @@ import Login from "../pages/login";
 import { RotasFuncionario } from "../../funcionario/routes/rotasFuncionario";
 import { AnimatePresence } from "framer-motion";
 import { RotasHospede } from "../../hospede/routes/rotasHospede";
+import Cadastro from "../pages/cadastro";
 
 const Rotas = () => {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode='wait'>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<RotasHospede />} />
-        <Route path="/funcionario/*" element={<RotasFuncionario />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/*' element={<RotasHospede />} />
+        <Route path='/funcionario/*' element={<RotasFuncionario />} />
       </Routes>
     </AnimatePresence>
   );
