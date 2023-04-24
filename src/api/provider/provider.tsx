@@ -4,6 +4,7 @@ import { ChildrenProp } from "../../globals/interfaces/interfaces";
 import determinarUsuario from "../../globals/utils/determinarUsuario";
 import { User } from "../../globals/types";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import api from "../axios/api";
 
 export default function Provider({ children }: ChildrenProp) {
   const [user, setUser] = useLocalStorage<User | null>("user", null);
@@ -19,12 +20,13 @@ export default function Provider({ children }: ChildrenProp) {
   //   console.log("Tipo " + tipo);
   // }, [user, tipo]);
 
-  const signIn = (email: string, senha: string) => {
-    const res = determinarUsuario(email, senha);
-    if (res) {
-      setUser(res.user);
-      setTipo(res.tipo);
-    }
+  const signIn = async (email: string, senha: string) => {
+    const res = await api.post("/auth/login", {
+      email: email,
+      password: senha,
+    });
+    setUser(res.data.usuario);
+    setTipo(res.data.usuario.type);
   };
 
   const value = useMemo(

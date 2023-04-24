@@ -48,35 +48,32 @@ export default function Login() {
         <div className={styles.divFormulario}>
           <form className={styles.formulario}>
             <h1>Fazer Login</h1>
-            <div className="flex-column">
+            <div className='flex-column'>
               <input
                 className={styles.loginInput}
-                placeholder="E-mail"
-                type="email"
+                placeholder='E-mail'
+                type='email'
                 value={username}
                 onChange={handleUsernameChange}
               ></input>
               <input
                 className={styles.loginInput}
-                placeholder="Senha"
-                type="password"
+                placeholder='Senha'
+                type='password'
                 value={password}
                 onChange={handlePasswordChange}
               ></input>
               <h6>*A senha deve ter 10 caracteres, sendo 1 especial</h6>
             </div>
-            <div
-              className="flex-row"
-              style={{ justifyContent: "space-between" }}
-            >
+            <div className='flex-row space-between'>
               <div>
-                <input type="checkbox" />
+                <input type='checkbox' />
                 <label> Lembrar-me</label>
               </div>
               <a>Esqueci a minha senha</a>
             </div>
             <button
-              type="button"
+              type='button'
               disabled={!isFormValid}
               className={styles.buttonSubmit}
               onClick={() => handleSubmit(username, password)}
