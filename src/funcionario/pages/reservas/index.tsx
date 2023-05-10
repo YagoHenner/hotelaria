@@ -62,28 +62,28 @@ export default function Reservas() {
     }
     get();
     console.log(ocupacoes);
-  }, [ocupacoes]);
+  }, [modalSolicitacao]);
   return (
     <PageTemplate title={"Reservas"}>
-      <div className="flex-row">
-        <CardParent height="600px">
+      <div className='flex-row'>
+        <CardParent height='600px'>
           <div className={styles.tituloDado}>Solicitações Pendentes</div>
-          <div className="flex-column padding">
+          <div className='flex-column padding'>
             {ocupacoes?.pendentes &&
               ocupacoes.pendentes.map((item: any) => {
                 return (
                   <Link
-                    to=""
+                    to=''
                     onClick={() =>
                       setModalSolicitacao({
                         open: true,
                         ocupacao: item,
                       })
                     }
-                    className="standardLink"
+                    className='standardLink'
                     key={item.id}
                   >
-                    <div className="flex-row space-between">
+                    <div className='flex-row space-between'>
                       <span>Quarto {item.idQuarto.numero}</span>
                       <ul>
                         <li>
@@ -96,18 +96,18 @@ export default function Reservas() {
               })}
           </div>
         </CardParent>
-        <CardParent height="600px">
+        <CardParent height='600px'>
           <div className={styles.tituloDado}>Reservas Confirmadas</div>
-          <div className="flex-column padding">
+          <div className='flex-column padding'>
             {ocupacoes?.confirmadas.map((item: Ocupação) => {
               return (
                 <Link
                   to={`/funcionario/ocupacoes/${item.idQuarto.id}`}
-                  className="standardLink"
+                  className='standardLink'
                   key={item.id}
                   state={item.idQuarto}
                 >
-                  <div className="flex-row space-between">
+                  <div className='flex-row space-between'>
                     <span>Quarto {item.idQuarto.numero}</span>
                     <ul>
                       <li>
@@ -129,9 +129,9 @@ export default function Reservas() {
       >
         <div>
           {modalSolicitacao.ocupacao && (
-            <div className="flex-row space-between">
+            <div className='flex-row space-between'>
               <CardParent>
-                <div className="padding">
+                <div className='padding'>
                   <div>
                     {Images[modalSolicitacao.ocupacao.idQuarto.id].imagename}
                   </div>
@@ -156,7 +156,7 @@ export default function Reservas() {
             </div>
           )}
           <button
-            className="standardbutton"
+            className='standardbutton'
             onClick={() => handleConfirmarReserva(modalSolicitacao.ocupacao)}
           >
             Confirmar
